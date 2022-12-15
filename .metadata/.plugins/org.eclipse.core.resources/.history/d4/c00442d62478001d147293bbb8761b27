@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="FlightReservation">
+        <property name="context-root" value="FlightReservation"/>
+        <property name="java-output-path" value="/FlightReservation/target/classes"/>
+    </wb-module>
+</project-modules>
