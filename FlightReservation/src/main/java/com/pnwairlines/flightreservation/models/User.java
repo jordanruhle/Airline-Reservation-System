@@ -15,6 +15,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Past;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -31,12 +32,22 @@ public class User {
     @NotEmpty
     private String last_name;
     
+    @Past(message="Date of birth must be before today")
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date dob;
     
     @NotEmpty
     @Email
 	private String email;
+
+    @NotEmpty
+    private String address;
+    
+    @NotEmpty
+    private String city;
+    
+    @NotEmpty
+    private String State;
     
     @NotEmpty
 	private String password;
