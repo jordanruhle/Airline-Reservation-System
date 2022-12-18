@@ -194,7 +194,7 @@ public class User {
 		this.seat = seat;
 	}
 	
-	//----------- GETTERS / SETTERS / OTHER METHODS --------
+	//---------- GETTERS / SETTERS / OTHER METHODS --------
 	
 	
 }
