@@ -1,4 +1,4 @@
-package UserServices;
+package com.pnwairlines.flightreservations.services;
 
 import java.util.Optional;
 
