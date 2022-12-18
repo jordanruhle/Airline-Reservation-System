@@ -1,7 +1,9 @@
 application.properties
 
 ### Eclipse ###
-
+metadata
+/metadata
+./metadata
 .metadata
 bin/
 tmp/
