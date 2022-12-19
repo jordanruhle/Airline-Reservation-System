@@ -50,12 +50,26 @@ public class UserController {
 		User createdUser = userServ.register(filledUser, results);
 		if(results.hasErrors()) {
 			model.addAttribute("newLogin", new LoginUser());
-			return "user/index.jsp";
+			return "user/register.jsp";
 		}
 	//------------ SAVE USER ID IN SESSION --------
 		session.setAttribute("user_id", createdUser.getId());
-		return "redirect:/home";
+		return "redirect:/checkout";
 	}
+	// ----------- PROCESS REGISTRATION -----------
+
+	// ----------- CHECKOUT -----------
+	@GetMapping("/checkout")
+	public String checkout(
+		HttpSession session,
+		@ModelAttribute("newPaymentInfo") LoginUser emptyPaymentInfo
+	) {
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/login";
+		}
+		return "user/checkout.jsp";
+	}
+	// ----------- CHECKOUT -----------
 	
 	//---------------- PROCESS LOGIN --------------
 	@PostMapping("/login")

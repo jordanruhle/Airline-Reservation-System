@@ -15,6 +15,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -28,10 +29,11 @@ public class User {
     private Long id;
     
     @NotEmpty
-    private String first_name;
+    private String firstName;
     @NotEmpty
-    private String last_name;
+    private String lastName;
     
+    @NotNull
     @Past(message="Date of birth must be before today")
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date dob;
@@ -72,19 +74,21 @@ public class User {
 	//-------------- CONSTRUCTORS --------------------
     public User() {}
    
-   public User(@NotEmpty String first_name, @NotEmpty String last_name,
+
+   public User(@NotEmpty String firstName, @NotEmpty String lastName,
 			@Past(message = "Date of birth must be before today") Date dob, @NotEmpty @Email String email,
 			@NotEmpty String address, @NotEmpty String city, @NotEmpty String state, @NotEmpty String password,
-			List<Seat> seat) {
+			@NotEmpty String confirm, List<Seat> seat) {
 		super();
-		this.first_name = first_name;
-		this.last_name = last_name;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.dob = dob;
 		this.email = email;
 		this.address = address;
 		this.city = city;
 		this.state = state;
 		this.password = password;
+		this.confirm = confirm;
 		this.seat = seat;
 	}
    //-------------- CONSTRUCTORS --------------------
@@ -109,20 +113,20 @@ public class User {
 		this.id = id;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public Date getDob() {

@@ -48,7 +48,7 @@ public class FlightController {
 		if(session.getAttribute("user_id") == null) {
 			return "redirect:/";
 		}
-		return "/flights/new.jsp";
+		return "/flight/new.jsp";
 	}
 	
 	@PostMapping("/flights/new")
@@ -58,7 +58,7 @@ public class FlightController {
 	) {
 		// VALIDATIONS FAIL
 		if(results.hasErrors()) {
-			return "/flights/new.jsp";
+			return "/flight/new.jsp";
 		}
 		Flight newFlight = flightService.create(filledFlight);
 		return "redirect:/flights";
@@ -74,7 +74,7 @@ public class FlightController {
 			Model model
 			) {
 		model.addAttribute("oneFlight", flightService.getOne(id));
-		return "/flights/show.jsp";
+		return "/flight/show.jsp";
 	}
 
 //	---------- READ ONE ---------------//
@@ -99,7 +99,7 @@ public class FlightController {
 		Model model
 	) {
 		model.addAttribute("flightObj", flightService.getOne(id));
-		return "/flights/edit.jsp";
+		return "/flight/edit.jsp";
 	}
 	@PutMapping("/flights/{id}/edit")
 	public String update(
@@ -107,7 +107,7 @@ public class FlightController {
 		BindingResult results
 	) {
 		if(results.hasErrors()) {
-			return "/flights/edit.jsp";
+			return "/flight/edit.jsp";
 		}
 		else {
 			flightService.create(flightObj);
