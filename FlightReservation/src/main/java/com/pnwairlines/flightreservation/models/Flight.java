@@ -61,7 +61,7 @@ public class Flight {
     
 // 	-------------------- RELATIONSHIP ------------------------
 
-    @OneToMany(mappedBy="seat", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="flight", fetch = FetchType.LAZY)
     private List<Seat> seat;
     
 // 	-------------------- RELATIONSHIP ------------------------    
