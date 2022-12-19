@@ -61,4 +61,13 @@ local.properties
 # JDT-specific (Eclipse Java Development Tools)     
 .classpath
 
-
+.apt_generated
+.project
+.settings
+.springBeans
+.sts4-cache
+.grade/
+build/
+target/
+bin/
+dependency-reduced-pom.xml
