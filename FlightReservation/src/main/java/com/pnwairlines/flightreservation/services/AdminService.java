@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
-import com.pnwairlines.flightreservation.models.LoginAdmin;
 import com.pnwairlines.flightreservation.models.Admin;
+import com.pnwairlines.flightreservation.models.LoginAdmin;
 import com.pnwairlines.flightreservation.repositories.AdminRepository;
 
 @Service
