@@ -51,6 +51,9 @@ public class User {
     
     @NotEmpty
 	private String password;
+  
+    @NotEmpty
+    private String confirm;
     
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -61,7 +64,7 @@ public class User {
     
     
     //-------------- RELATIONSHIP --------------------
-    @OneToMany(mappedBy="seat", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
     private List<Seat> seat;
     //-------------- RELATIONSHIP --------------------
     
@@ -168,6 +171,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public String getConfirm() {
+		return confirm;
+	}
+
+	public void setConfirm(String confirm) {
+		this.confirm = confirm;
 	}
 
 	public Date getCreatedAt() {

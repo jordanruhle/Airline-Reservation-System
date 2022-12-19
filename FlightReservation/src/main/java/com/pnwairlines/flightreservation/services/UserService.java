@@ -2,11 +2,16 @@ package com.pnwairlines.flightreservation.services;
 
 import java.util.Optional;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.pnwairlines.flightreservation.models.LoginUser;
 import com.pnwairlines.flightreservation.models.User;
+import com.pnwairlines.flightreservation.repositories.UserRepository;
 
+@Service
 public class UserService {
 
 	@Autowired

@@ -15,11 +15,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import com.pnwairlines.flightreservation.models.Flight;
+import com.pnwairlines.flightreservation.models.User;
 import com.pnwairlines.flightreservation.services.FlightService;
 import com.pnwairlines.flightreservation.services.UserService;
 
 @Controller
 public class FlightController {
+	
 	@Autowired
 	FlightService flightService;
 	
