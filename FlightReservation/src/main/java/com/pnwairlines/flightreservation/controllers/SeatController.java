@@ -21,22 +21,27 @@ public class SeatController {
 	@Autowired
 	UserService userServ;
 	
-	// ----------- READ ALL ---------------//
-			@GetMapping("/seats")
+	// ----------- VIEW ALL SEATS BY FLIGHT ---------------//
+			@GetMapping("/seats/{id}/picker")
 			public String index(
 				HttpSession session, Model model
 			) {
-				if(session.getAttribute("user_id") == null) {
-					return "redirect:/";
-				}
-				Long user_Id = (Long) session.getAttribute("user_id");
-				User user = userServ.getOneUser(user_Id);
-				model.addAttribute("user", user);
 				
-				model.addAttribute("allBabys", seatServ.getAll());
-				return "/babys/dashboard.jsp";
+				model.addAttribute("allSeats", seatServ.getAll());
+				return "/seat/seatpicker.jsp";
 			}
-			//-----------READ ALL ----------------//
+	// ----------- VIEW ALL SEATS BY FLIGHT ---------------//
+	
+	// ------------------- CART --------------------//
+			
+			@GetMapping("/seats/{id}")
+			public String cart(
+				HttpSession session, 
+				Model model
+			) {
+				return "seat/cart.jsp";
+			}
+	// ------------------- CART --------------------//
 	
 
 }
