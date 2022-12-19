@@ -28,8 +28,18 @@ public class FlightController {
 	@Autowired
 	UserService userService;
 	
-// ---------- CREATE -----------------//
+// ---------- HOMEPAGE -----------------//
+	@GetMapping("/")
+	public String home(
+		HttpSession session
+	) {
+		return "/flight/index.jsp";
+	}
+// ---------- HOMEPAGE -----------------//
 	
+	
+	
+// ---------- CREATE -----------------//
 	@GetMapping("/flights/new")
 	public String newFlight(
 		@ModelAttribute("flightObj") Flight emptyFlight,
@@ -75,15 +85,10 @@ public class FlightController {
 	public String index(
 			HttpSession session, 
 			Model model
-			) {
-		Long user_id = (Long) session.getAttribute("user_id");
-		User user = userService.getOneUser(user_id);
-		model.addAttribute("user", user);
+		) {
 		model.addAttribute("allFlights", flightService.getAll());
-		return "/flights/search.jsp";
-		
+		return "/flight/search.jsp";
 	}
-	
 // ----------- READ ALL ---------------//
 		
 // ---------- UPDATE --------------//
