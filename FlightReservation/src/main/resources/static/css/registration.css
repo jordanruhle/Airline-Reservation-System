@@ -1,0 +1,39 @@
+@charset "ISO-8859-1";
+
+.container-sm{
+	margin-top: 20px;
+}
+
+.form-label{
+	font-size: 22px;
+}
+
+.logo{
+	height: 200px;
+	width: 200px;
+}
+
+.logoName{
+	color: #1D3A56;
+}
+
+.regForm{
+	border-radius: 10px;
+}
+
+img{
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+
+.navBar{
+	padding-top: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+body{
+	background-image: url("https://cdn.pixabay.com/photo/2018/11/25/09/37/clouds-3837043_960_720.jpg");
+	background-size: cover;
+}
