@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import com.pnwairlines.flightreservation.models.Flight;
-import com.pnwairlines.flightreservation.models.User;
+import com.pnwairlines.flightreservation.models.Seat;
+import com.pnwairlines.flightreservation.repositories.SeatRepository;
 import com.pnwairlines.flightreservation.services.FlightService;
+import com.pnwairlines.flightreservation.services.SeatService;
 import com.pnwairlines.flightreservation.services.UserService;
 
 @Controller
@@ -27,6 +29,9 @@ public class FlightController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	SeatService seatService;
 	
 // ---------- HOMEPAGE -----------------//
 	@GetMapping("/")
@@ -40,28 +45,54 @@ public class FlightController {
 	
 	
 // ---------- CREATE -----------------//
-	@GetMapping("/flights/new")
+	@GetMapping("/flights/create")
 	public String newFlight(
 		@ModelAttribute("flightObj") Flight emptyFlight,
 		HttpSession session
 	) {
 		if(session.getAttribute("admin_id") == null) {
-			return "redirect:admin/login";
+			return "redirect:admins/login";
 		}
-		return "/flight/new.jsp";
+		return "/flight/create.jsp";
 	}
 	
-	@PostMapping("/flights/new")
+	@PostMapping("/flights/create")
 	public String processFlight(
 		@Valid @ModelAttribute("flightObj") Flight filledFlight,
 		BindingResult results
 	) {
 		// VALIDATIONS FAIL
 		if(results.hasErrors()) {
-			return "/flight/new.jsp";
+			return "/flight/create.jsp";
 		}
 		Flight newFlight = flightService.create(filledFlight);
-		return "redirect:/flights";
+		for(int i = 0; i < newFlight.getNumber_of_seats(); i++) {
+			int row = 0;
+			int modulus = i % 6;
+			char aisle;
+			if(modulus == 0) {
+				aisle = 'A';
+				row++;
+			}
+			else if(modulus == 1) {
+				aisle = 'B';
+			}
+			else if(modulus == 2) {
+				aisle = 'C';
+			}
+			else if(modulus == 3) {
+				aisle = 'D';
+			}
+			else if(modulus == 4) {
+				aisle = 'E';
+			}
+			else {
+				aisle = 'F';
+			}
+			Seat seatObj = new Seat(aisle, row, 188.95, newFlight, null);
+			seatService.create(seatObj);
+		}
+		return "redirect:/admins/dashboard";
 	}
 	
 // ---------- CREATE -----------------//

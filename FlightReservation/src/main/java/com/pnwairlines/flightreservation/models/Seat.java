@@ -58,17 +58,13 @@ public class Seat {
 //-------------- CONSTRUCTORS --------------------
     public Seat() {}
     
-    public Seat(Long id, @NotEmpty char aisle, @Min(0) int row, @Min(0) Double price, Flight flight, User user,
-		Date createdAt, Date updatedAt) {
+    public Seat(@NotEmpty char aisle, @Min(0) int row, @Min(0) Double price, Flight flight, User user) {
 		super();
-		this.id = id;
 		this.aisle = aisle;
 		this.row = row;
 		this.price = price;
 		this.flight = flight;
 		this.user = user;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
 		}	
 //-------------- CONSTRUCTORS --------------------
    

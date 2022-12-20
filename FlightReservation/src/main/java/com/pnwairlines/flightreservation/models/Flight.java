@@ -28,7 +28,7 @@ public class Flight {
     private Long id;
     
     @NotEmpty
-    private String depature;
+    private String departure;
     
     @NotEmpty
     private String destination;
@@ -47,7 +47,7 @@ public class Flight {
     @NotEmpty
     private String plane;
     
-    @NotEmpty
+    @NotNull
     private int number_of_seats;
     
     @Column(updatable=false)
@@ -71,18 +71,13 @@ public class Flight {
     
     public Flight() {}
     
-    public Flight(Long id, 
-		@NotEmpty String depature, 
-		@NotEmpty String destination, 
-		@NotNull Date departure_time, 
-		@NotNull Date arrival_time,
-		@NotEmpty String status,
-		@NotEmpty String plane,
-		@NotEmpty int number_of_seats,
+
+
+    public Flight(@NotEmpty String departure, @NotEmpty String destination, @NotNull Date departure_time,
+		@NotNull Date arrival_time, @NotEmpty String status, @NotEmpty String plane, @NotNull int number_of_seats,
 		List<Seat> seat) {
 	super();
-	this.id = id;
-	this.depature = depature;
+	this.departure = departure;
 	this.destination = destination;
 	this.departure_time = departure_time;
 	this.arrival_time = arrival_time;
@@ -91,6 +86,8 @@ public class Flight {
 	this.number_of_seats = number_of_seats;
 	this.seat = seat;
 }
+
+
 
 // 	-------------------- CONSTRUCTORS ------------------------    
     
@@ -107,73 +104,96 @@ public class Flight {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
-	
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getDepature() {
-		return depature;
+
+	public String getDeparture() {
+		return departure;
 	}
-	public void setDepature(String depature) {
-		this.depature = depature;
+
+	public void setDeparture(String departure) {
+		this.departure = departure;
 	}
+
 	public String getDestination() {
 		return destination;
 	}
+
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
+
 	public Date getDeparture_time() {
 		return departure_time;
 	}
+
 	public void setDeparture_time(Date departure_time) {
 		this.departure_time = departure_time;
 	}
+
 	public Date getArrival_time() {
 		return arrival_time;
 	}
+
 	public void setArrival_time(Date arrival_time) {
 		this.arrival_time = arrival_time;
 	}
+
 	public String getStatus() {
 		return status;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	public String getPlane() {
 		return plane;
 	}
+
 	public void setPlane(String plane) {
 		this.plane = plane;
 	}
+
 	public int getNumber_of_seats() {
 		return number_of_seats;
 	}
+
 	public void setNumber_of_seats(int number_of_seats) {
 		this.number_of_seats = number_of_seats;
 	}
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}
+
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
+
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+
 	public List<Seat> getSeat() {
 		return seat;
 	}
+
 	public void setSeat(List<Seat> seat) {
 		this.seat = seat;
 	}
+	
+	
 	
 	
 // ---------------GETTERS / SETTERS / OTHER METHODS ---------------------

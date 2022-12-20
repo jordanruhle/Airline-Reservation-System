@@ -11,9 +11,12 @@
 </head>
 <body>
 	<h1>Admin Dashboard</h1>
-	<div>
-		<a href="/logout">logout</a>
-	</div>
+        <form action="/admins/logout">
+        	<button>Logout</button>
+        </form>
+        <form action="/flights/create">
+        	<button>Create a Flight</button>
+        </form>
 		<table>
             <thead>
                 <tr>
@@ -25,9 +28,9 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="flight" items="${allflights}">
+                <c:forEach var="flight" items="${allFlights}">
                     <tr>
-                        <td><c:out value="${flight.departure_time}" /></a></td>
+                        <td><c:out value="${flight.departure_time}" /></td>
                         <td><c:out value="${flight.departure}" /></td>
                         <td><c:out value="${flight.arival}" /></td>
                         <td><c:out value="${flight.status}" /></td>
@@ -46,9 +49,5 @@
                 </c:forEach>
             </tbody>
         </table>
-        <form action="/flight/new">
-        	<button>Create a Flight</button>
-        </form>
-	</div>
 </body>
 </html>
