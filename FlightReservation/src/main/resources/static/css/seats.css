@@ -1,0 +1,50 @@
+@charset "ISO-8859-1";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center ;
+}
+
+form {
+    height: 100%;
+}
+
+.plane {
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 50px 50px 50px 40px 50px 50px 50px;
+    grid-column-gap: 5px;
+    grid-template-rows: 50px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.square {
+    display: text-align-center;
+}
+
+.seat {
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    height: 100%;
+    width: 100%;
+
+}
+.nose {
+    height: 370px;
+    width: 372px;
+    border-radius: 100% 100% 0 0;
+    border-bottom: 50% solid black;
+    border: 1px solid black;
+    border-bottom: none;
+}
