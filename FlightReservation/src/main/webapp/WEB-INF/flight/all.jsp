@@ -20,6 +20,8 @@
 		<table>
             <thead>
                 <tr>
+                
+                    <th>Flight Number</th>
                     <th>Date</th>
                     <th>Departure City</th>
                     <th>Arrival City</th>
@@ -30,9 +32,10 @@
             <tbody>
                 <c:forEach var="flight" items="${allFlights}">
                     <tr>
+                        <td><c:out value="${flight.id}" /></td>
                         <td><c:out value="${flight.departure_time}" /></td>
                         <td><c:out value="${flight.departure}" /></td>
-                        <td><c:out value="${flight.arival}" /></td>
+                        <td><c:out value="${flight.destination}" /></td>
                         <td><c:out value="${flight.status}" /></td>
                         <td>
 							<form action="/flights/${flight.id}/view">
@@ -42,7 +45,7 @@
         						<button>Create a Flight</button>
         					</form>
 							<form action="/flights/${flight.id}/delete">
-        						<button>Create a Flight</button>
+        						<button>Delete</button>
         					</form>
 						</td> 
                     </tr>

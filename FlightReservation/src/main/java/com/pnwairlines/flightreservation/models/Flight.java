@@ -44,9 +44,6 @@ public class Flight {
     @NotEmpty
     private String status;
     
-    @NotEmpty
-    private String plane;
-    
     @NotNull
     private int number_of_seats;
     
@@ -74,7 +71,7 @@ public class Flight {
 
 
     public Flight(@NotEmpty String departure, @NotEmpty String destination, @NotNull Date departure_time,
-		@NotNull Date arrival_time, @NotEmpty String status, @NotEmpty String plane, @NotNull int number_of_seats,
+		@NotNull Date arrival_time, @NotEmpty String status, @NotNull int number_of_seats,
 		List<Seat> seat) {
 	super();
 	this.departure = departure;
@@ -82,7 +79,6 @@ public class Flight {
 	this.departure_time = departure_time;
 	this.arrival_time = arrival_time;
 	this.status = status;
-	this.plane = plane;
 	this.number_of_seats = number_of_seats;
 	this.seat = seat;
 }
@@ -151,14 +147,6 @@ public class Flight {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public String getPlane() {
-		return plane;
-	}
-
-	public void setPlane(String plane) {
-		this.plane = plane;
 	}
 
 	public int getNumber_of_seats() {

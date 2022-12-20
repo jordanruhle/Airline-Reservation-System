@@ -62,6 +62,7 @@ public class FlightController {
 		BindingResult results
 	) {
 		// VALIDATIONS FAIL
+		System.out.println(results);
 		if(results.hasErrors()) {
 			return "/flight/create.jsp";
 		}
@@ -117,7 +118,7 @@ public class FlightController {
 			Model model
 			) {
 		if(session.getAttribute("admin_id") == null) {
-			return "redirect:/";
+			return "redirect:/admins/login";
 		}
 		model.addAttribute("allFlights", flightService.getAll());
 		return "/flight/all.jsp";

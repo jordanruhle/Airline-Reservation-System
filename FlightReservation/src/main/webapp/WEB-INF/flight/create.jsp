@@ -86,7 +86,7 @@
 			</p>
 				<button>Submit</button>
 		</form:form>
-		<form action="/home">
+		<form action="/admins/dashboard">
 			<button>Cancel</button>
 		</form>
 	</div>
