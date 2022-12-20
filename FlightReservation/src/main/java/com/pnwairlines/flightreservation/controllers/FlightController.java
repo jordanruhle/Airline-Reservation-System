@@ -45,8 +45,8 @@ public class FlightController {
 		@ModelAttribute("flightObj") Flight emptyFlight,
 		HttpSession session
 	) {
-		if(session.getAttribute("user_id") == null) {
-			return "redirect:/";
+		if(session.getAttribute("admin_id") == null) {
+			return "redirect:admin/login";
 		}
 		return "/flight/new.jsp";
 	}
@@ -80,16 +80,29 @@ public class FlightController {
 //	---------- READ ONE ---------------//
 	
 // ----------- READ ALL ---------------//
+	@GetMapping("/admins/dashboard")
+	public String allFlights(
+			HttpSession session, 
+			Model model
+			) {
+		if(session.getAttribute("admin_id") == null) {
+			return "redirect:/";
+		}
+		model.addAttribute("allFlights", flightService.getAll());
+		return "/flight/all.jsp";
+	}
+// ----------- READ ALL ---------------//
 	
+// ----------- FLIGHT SEARCH ---------------//
 	@GetMapping("/flights")
 	public String index(
 			HttpSession session, 
 			Model model
-		) {
+			) {
 		model.addAttribute("allFlights", flightService.getAll());
 		return "/flight/search.jsp";
 	}
-// ----------- READ ALL ---------------//
+// ----------- FLIGHT SEARCH ---------------//
 		
 // ---------- UPDATE --------------//
 	
