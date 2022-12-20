@@ -44,7 +44,7 @@ public class AdminController {
 		}
 		//------------ SAVE USER ID IN SESSION ------------
 		session.setAttribute("admin_id", loggedAdmin.getId());
-		return "redirect:/flights";
+		return "redirect:/admins/dashboard";
 	}
 	//---------------- PROCESS LOGIN --------------
 	

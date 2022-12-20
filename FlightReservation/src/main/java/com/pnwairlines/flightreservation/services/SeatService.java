@@ -17,6 +17,9 @@ public class SeatService {
 	public Seat create(Seat newSeat) {
 		return seatRepo.save(newSeat);
 	}
+	public Seat Seat(Seat newSeat) {
+		return seatRepo.save(newSeat);
+	}
 	
 	// READ ONE
 	public Seat getOne(Long id) {
@@ -32,5 +35,6 @@ public class SeatService {
 	public void deleteOne(Long id) {
 		seatRepo.deleteById(id);
 	}
+	
 }
 
