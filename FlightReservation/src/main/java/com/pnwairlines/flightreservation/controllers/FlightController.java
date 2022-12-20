@@ -176,7 +176,7 @@ public class FlightController {
 		@PathVariable("id") Long id
 	) {
 		flightService.deleteOne(id);
-		return "redirect:/flights";
+		return "redirect:/admins/dashboard";
 	}
 	
 // ---------- DELETE --------------//

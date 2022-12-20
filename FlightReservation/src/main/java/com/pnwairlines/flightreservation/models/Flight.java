@@ -3,6 +3,7 @@ package com.pnwairlines.flightreservation.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -58,7 +59,7 @@ public class Flight {
     
 // 	-------------------- RELATIONSHIP ------------------------
 
-    @OneToMany(mappedBy="flight", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="flight", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Seat> seat;
     
 // 	-------------------- RELATIONSHIP ------------------------    
