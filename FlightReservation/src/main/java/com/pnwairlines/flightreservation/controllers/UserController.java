@@ -62,7 +62,7 @@ public class UserController {
 	@GetMapping("/checkout")
 	public String checkout(
 		HttpSession session,
-		@ModelAttribute("newPaymentInfo") LoginUser emptyPaymentInfo
+		@ModelAttribute("newPaymentInfo") User emptyPaymentInfo
 	) {
 		if(session.getAttribute("user_id") == null) {
 			return "redirect:/login";
@@ -70,7 +70,18 @@ public class UserController {
 		return "user/checkout.jsp";
 	}
 	// ----------- CHECKOUT -----------
-	
+	// ----------- PAYMENT ------------
+	@GetMapping("/payment")
+	public String payment(
+		HttpSession session,
+		@ModelAttribute("newPaymentInfo") User emptyPaymentInfo
+	) {
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/login";
+		}
+		return "user/payment.jsp";
+	}
+	// --------------- PAYMENT --------------------
 	//---------------- PROCESS LOGIN --------------
 	@PostMapping("/login")
 	public String login(
