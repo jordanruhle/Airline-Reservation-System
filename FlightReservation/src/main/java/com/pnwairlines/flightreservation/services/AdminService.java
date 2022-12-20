@@ -22,14 +22,6 @@ public class AdminService {
     		Admin newAdmin, 
     		BindingResult results
     	) {
-        // TO-DO: Additional validations!
-    	
-    	
-       //------------ CHECK TO SEE IF PASSWORD MATCHES CONFIRM PASSWORD -----------
-    	if(!newAdmin.getPassword().equals(newAdmin.getConfirm())) {
-    		results.rejectValue("confirm", "ConfirmPass", "Password and Confirm Password must match");
-    	}
-    	//------------ CHECK TO SEE IF PASSWORD MATCHES CONFIRM PASSWORD -----------
         
     	// --------------- CHECK IF EMAIL IS ALREADY IN DBs ---------------------
          if (checkEmail(newAdmin.getEmail())) {
