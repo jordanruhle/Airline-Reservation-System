@@ -38,7 +38,9 @@
 	       			<path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Zm.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1c-.213 0-.458.158-.678.599Z" />
 	       		</svg>
 	       		<h4 class="detailsText">Flight Details</h4>
-	       		<button>Remove</button>
+	       		<form action="/seats/${seat.flight.id}/picker">
+	       			<button>Remove</button>
+	       		</form>
 	       	</div>
 	       	<div class="flightDetails d-flex justify-content-between gap-5 p-2">
 				<div class ="minWidth">
@@ -53,7 +55,7 @@
 				</div>
 				<div class ="minWidth">
 					<p>Flight Price: $<c:out value="${ seat.price }"></c:out></p>
-					<p>Seat: <c:out value="${ seat.aisle }"></c:out><c:out value="${ seat.id }"></c:out></p>
+					<p>Seat: <c:out value="${ seat.aisle }"></c:out><c:out value="${ seat.row }"></c:out></p>
 					<p>Flight Number: <c:out value="${ seat.flight.id }"></c:out></p>
 				</div>
 
@@ -64,10 +66,9 @@
 			<div class="d-flex flex-column p-2">
 				<p>PNW SkyMiles:</p>
 				<p>Sub Total: $<c:out value="${ seat.price }"></c:out></p>
-				<p>Additional Fees: Mile High Fee $4.20</p>
 				<p>Taxes: $<c:out value="${ seat.price *.10}"></c:out></p>
 				<p>Total Charges:</p>
-				<p>$<c:out value="${ seat.price *1.10 + 4.20}"></c:out></p>
+				<p>$<c:out value="${ seat.price *1.10}"></c:out></p>
 				<form action="/login">
 				<button class="align-items-center">Checkout</button>
 				</form>

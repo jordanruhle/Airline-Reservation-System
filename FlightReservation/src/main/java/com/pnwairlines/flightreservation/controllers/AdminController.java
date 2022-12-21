@@ -48,4 +48,14 @@ public class AdminController {
 	}
 	//---------------- PROCESS LOGIN --------------
 	
+	//------------------ LOGOUT ------------------
+	@GetMapping("/admins/logout")
+	public String logout(
+		HttpSession session
+	) {
+		session.setAttribute("admin_id", null); 
+			return "redirect:/admins/login";
+		
+	}
+	//------------------ LOGOUT ------------------
 }
