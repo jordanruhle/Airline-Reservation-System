@@ -31,18 +31,7 @@
             <img src="project\static\icons8-seat-basicons-—-solid.zip" class="seatIcon"alt="">
         </div>
         <div class="plane">
-            <div class=" square"><form action=""><button  class="seat">L</button></form></div>
-            <div class=" square"><form action=""><button  class="seat">X</button></form></div>
-            <div class=" square"><form action=""><button  class="seat">X</button></form></div>
-            <div class=" square"><div class="aisle"></div></div>
-            <div class=" square"><form action=""><button  class="seat">X</button></form></div>
-            <div class=" square"><form action=""><button  class="seat">X</button></form></div>
-            <div class=" square"><form action=""><button  class="seat">X</button></form></div>
-        </div>
-        <div class="plane">
 	        <c:forEach var="seat" items="${allSeats}">
-	        	
-	        	
 	        	<c:choose>
 	        	
 	        		<c:when test = "${seat.user.id == null}">

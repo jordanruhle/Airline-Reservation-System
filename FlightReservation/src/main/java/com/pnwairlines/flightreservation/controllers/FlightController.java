@@ -67,8 +67,8 @@ public class FlightController {
 			return "/flight/create.jsp";
 		}
 		Flight newFlight = flightService.create(filledFlight);
+		int row = 0;
 		for(int i = 0; i < newFlight.getNumber_of_seats(); i++) {
-			int row = 0;
 			int modulus = i % 6;
 			String aisle;
 			if(modulus == 0) {

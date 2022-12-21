@@ -76,56 +76,56 @@
 						<div class="col-md-6 mb-4">
 							<label class="form-label">State</label>
 							<select class="select form-control form-control-lg" path="state" placeholder="Select and option...">
-								<option value="AL"/>
-								<option value="AK"/>
-								<option value="AZ"/>
-								<option value="AR"/>
-								<option value="CA"/>
-								<option value="CO"/>
-								<option value="CT"/>
-								<option value="DE"/>
-								<option value="FL"/>
-								<option value="GA"/>
-								<option value="HI"/>
-								<option value="ID"/>
-								<option value="IL"/>
-								<option value="IN"/>
-								<option value="IA"/>
-								<option value="KS"/>
-								<option value="KY"/>
-								<option value="LA"/>
-								<option value="ME"/>
-								<option value="MD"/>
-								<option value="MA"/>
-								<option value="MI"/>
-								<option value="MN"/>
-								<option value="MS"/>
-								<option value="MO"/>
-								<option value="MT"/>
-								<option value="NE"/>
-								<option value="NV"/>
-								<option value="NH"/>
-								<option value="NJ"/>
-								<option value="NM"/>
-								<option value="NY"/>
-								<option value="NC"/>
-								<option value="ND"/>
-								<option value="OH"/>
-								<option value="OK"/>
-								<option value="OR"/>
-								<option value="PA"/>
-								<option value="RI"/>
-								<option value="SC"/>
-								<option value="SD"/>
-								<option value="TN"/>
-								<option value="TX"/>
-								<option value="UT"/>
-								<option value="VT"/>
-								<option value="VA"/>
-								<option value="WA"/>
-								<option value="WV"/>
-								<option value="WI"/>
-								<option value="WY"/>
+								<option value="AL">AL</option>
+								<option value="AK">AK</option>
+								<option value="AZ">AZ</option>
+								<option value="AR">AR</option>
+								<option value="CA">CA</option>
+								<option value="CT">CT</option>
+								<option value="CO">CO</option>
+								<option value="DE">DE</option>
+								<option value="FL">FL</option>
+								<option value="GA">GA</option>
+								<option value="HI">HI</option>
+								<option value="ID">ID</option>
+								<option value="IL">IL</option>
+								<option value="IN">IN</option>
+								<option value="IA">IA</option>
+								<option value="KS">KS</option>
+								<option value="KY">KY</option>
+								<option value="LA">LA</option>
+								<option value="ME">ME</option>
+								<option value="MD">MD</option>
+								<option value="MA">MA</option>
+								<option value="MI">MI</option>
+								<option value="MN">MN</option>
+								<option value="MS">MS</option>
+								<option value="MO">MO</option>
+								<option value="MT">MT</option>
+								<option value="NE">NE</option>
+								<option value="NV">NV</option>
+								<option value="NH">NH</option>
+								<option value="NJ">NJ</option>
+								<option value="NM">NM</option>
+								<option value="NY">NY</option>
+								<option value="NC">NC</option>
+								<option value="ND">ND</option>
+								<option value="OH">OH</option>
+								<option value="OK">OK</option>
+								<option value="OR">OR</option>
+								<option value="PA">PA</option>
+								<option value="RI">RI</option>
+								<option value="SC">SC</option>
+								<option value="SD">SD</option>
+								<option value="TN">TN</option>
+								<option value="TX">TX</option>
+								<option value="UT">UT</option>
+								<option value="VT">VT</option>
+								<option value="VA">VA</option>
+								<option value="WA">WA</option>
+								<option value="WV">WV</option>
+								<option value="WI">WI</option>
+								<option value="WY">WY</option>
 							</select>
 							<errors path="state" />
 			
@@ -137,20 +137,6 @@
 								<errors path="city" />
 							</div>
 						</div>
-			
-			
-						<div class="form-outline mb-4">
-							<label class="form-label">Password</label>
-							<input path="password" class="form-control form-control-lg" />
-							<errors path="password" />
-						</div>
-			
-						<div class="form-outline mb-4">
-							<label class="form-label">Confirm Password</label>
-							<input path="confirm" class="form-control form-control-lg" />
-							<errors path="confirm" />
-						</div>
-			
 						<div class="d-flex justify-content-end pt-3">
 							<button class=" form-label btn btn-warning btn-lg ms-2">Continue to Payment</button>
 						</div>

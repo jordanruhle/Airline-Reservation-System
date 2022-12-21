@@ -93,11 +93,11 @@ public class UserController {
 		User loggedUser = userServ.login(filledLoginUser, results);
 		if(results.hasErrors()) {
 			model.addAttribute("newUser", new User());
-			return "user/index.jsp";
+			return  "user/login.jsp";
 		}
 		//------------ SAVE USER ID IN SESSION ------------
 		session.setAttribute("user_id", loggedUser.getId());
-		return "redirect:/home";
+		return "redirect:/checkout";
 	}
 	//---------------- PROCESS LOGIN --------------
 

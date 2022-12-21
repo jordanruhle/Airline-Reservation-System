@@ -23,6 +23,7 @@ form {
     display: grid;
     grid-template-columns: 50px 50px 50px 40px 50px 50px 50px;
     grid-column-gap: 5px;
+    grid-row-gap: 5px;
     grid-template-rows: 50px;
     border-left: 1px solid black;
     border-right: 1px solid black;
