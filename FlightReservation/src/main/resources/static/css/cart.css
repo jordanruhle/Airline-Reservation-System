@@ -3,3 +3,7 @@
 .main{
 	gap: 25%;
 }
+.minWidth{
+	min-width: max-content;
+	
+}

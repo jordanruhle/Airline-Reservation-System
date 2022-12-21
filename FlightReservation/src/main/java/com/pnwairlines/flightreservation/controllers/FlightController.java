@@ -70,25 +70,25 @@ public class FlightController {
 		for(int i = 0; i < newFlight.getNumber_of_seats(); i++) {
 			int row = 0;
 			int modulus = i % 6;
-			char aisle;
+			String aisle;
 			if(modulus == 0) {
-				aisle = 'A';
+				aisle = "A";
 				row++;
 			}
 			else if(modulus == 1) {
-				aisle = 'B';
+				aisle = "B";
 			}
 			else if(modulus == 2) {
-				aisle = 'C';
+				aisle = "C";
 			}
 			else if(modulus == 3) {
-				aisle = 'D';
+				aisle = "D";
 			}
 			else if(modulus == 4) {
-				aisle = 'E';
+				aisle = "E";
 			}
 			else {
-				aisle = 'F';
+				aisle = "F";
 			}
 			Seat seatObj = new Seat(aisle, row, 188.95, newFlight, null);
 			seatService.create(seatObj);
