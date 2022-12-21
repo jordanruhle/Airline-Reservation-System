@@ -3,6 +3,7 @@ package com.pnwairlines.flightreservation.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import com.pnwairlines.flightreservation.models.Seat;
@@ -36,5 +37,11 @@ public class SeatService {
 		seatRepo.deleteById(id);
 	}
 	
+	// GET ALL SEATS BY FLIGHT ID
+	@Query(value="SELECT * FROM seats WHERE flight_id = ?1", nativeQuery=true)
+	public Seat getSeatWhereId(Long id) {
+		return null;
+	}
+
 }
 

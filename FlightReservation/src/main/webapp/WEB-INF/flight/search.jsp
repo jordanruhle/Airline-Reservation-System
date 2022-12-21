@@ -2,6 +2,8 @@
 <!-- New line below to use the JSP Standard Tag Library -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
@@ -69,33 +71,41 @@
 		<br/>
 	<!-- SORT BUTTONS -->
 <!-- =========================================================================================================================================================== -->		
-	<!-- TABLE GRID -->
+	<!-- TABLE -->
 		
 		<div class="container text-center ">
-		
-			<div class="d-flex justify-content-evenly">
-			
-				<div class="col-sm-1"></div>
-				<div class="col-sm-4">Flight Times</div>
-				<div class="col-sm-2">Duration</div>
-				<div class="col-sm-2"> Date</div>
-				<div class="col-sm-2">Price Range</div>
-			</div>
-			
-			<c:forEach var="flight" items="${allFlights}">
-				<div class="row">
-					<div><button class="col btn btn-secondary"></button></div>
-					<div class="col-lg"><c:out value="${flight.departure_time}"/>-><c:out value="${flight.arrival_time}"></c:out></div>
-					<div class="col-sm"><c:out value="${flight.arrival_time}"/></div>
-					<div class="col-sm"><c:out value="${flight.departure_time}"/></div>
-					<div class="col-sm"><c:out value="${seat.flight.price}"/></div>
-				</div>
-			</c:forEach>
+			<table class="table table-dark table-striped">
+	            <thead>
+	                <tr>
+	                
+	                    <th>Date</th>
+	                    <th>Departure Time</th>
+	                    <th>Arrival Time</th>
+	                    <th>Price</th>
+	                    <th>Select</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <c:forEach var="flight" items="${allFlights}">
+	                    <tr >
+	                      	<td><fmt:formatDate type="date" value="${flight.departure_time}" /></td>
+	                        <td><fmt:formatDate type="time" pattern="hh:mm a" value="${flight.departure_time}" /></td> 	
+	                        <td><fmt:formatDate type="time" pattern="hh:mm a" value="${flight.arrival_time}" /></td> 	
+	                        <td><c:out value="${seat.flight.price}" /></td>
+	                        <td class="d-flex">
+								<form action="/seats/${flight.id}/picker">
+	        						<button class="btn btn-primary me-2">Choose Seat</button>
+	        					</form>
+							</td> 
+	                    </tr>
+	                </c:forEach>
+	            </tbody>
+	        </table>
+		</div>	
 				
-	<!-- TABLE GRID -->
+	<!-- TABLE -->
 <!-- =========================================================================================================================================================== -->		
 	
-	</div>	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -39,6 +39,11 @@
             <div class=" square"><form action=""><button  class="seat">X</button></form></div>
             <div class=" square"><form action=""><button  class="seat">X</button></form></div>
         </div>
+        
+        <c:forEach var="seat" items="${allSeats}">
+        	<c:out value="${seat.price}" />
+        </c:forEach>
+        
     </main>
 </body>
 </html>
