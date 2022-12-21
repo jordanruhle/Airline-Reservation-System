@@ -29,7 +29,7 @@ public class Seat {
     private Long id;
     
     @NotNull
-    private char aisle;
+    private String aisle;
     
     @Min(0)
     private int row;
@@ -59,7 +59,7 @@ public class Seat {
 //-------------- CONSTRUCTORS --------------------
     public Seat() {}
     
-    public Seat(@NotEmpty char aisle, @Min(0) int row, @Min(0) Double price, Flight flight, User user) {
+    public Seat(@NotEmpty String aisle, @Min(0) int row, @Min(0) Double price, Flight flight, User user) {
 		super();
 		this.aisle = aisle;
 		this.row = row;
@@ -86,10 +86,10 @@ public class Seat {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public char getAisle() {
+	public String getAisle() {
 		return aisle;
 	}
-	public void setAisle(char aisle) {
+	public void setAisle(String aisle) {
 		this.aisle = aisle;
 	}
 	public int getRow() {

@@ -1,6 +1,7 @@
 <!-- New line below to use the JSP Standard Tag Library -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isErrorPage="true"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,7 @@
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <!-- for CSS -->
-<link rel="stylesheet" type="text/css" href="/css/seat/cart.css">
+<link rel="stylesheet" type="text/css" href="/css/cart.css">
 <meta charset="ISO-8859-1">
 <title>Flight Details</title>
 </head>
@@ -39,25 +40,22 @@
 	       		<h4 class="detailsText">Flight Details</h4>
 	       		<button>Remove</button>
 	       	</div>
-	       	<div class="flightDetails d-flex justify-content-between gap-3 p-2">
-				<div>
-					<p>Departure City <c:out value="${ seat.flight.departure }"></c:out></p>
-					<p>Departure Time <c:out value="${ seat.flight.departure_time }"></c:out></p>
-					<p>Date <c:out value="${ seat.flight.departure_time }"></c:out></p>
+	       	<div class="flightDetails d-flex justify-content-between gap-5 p-2">
+				<div class ="minWidth">
+					<p>Departure City: <c:out value="${ seat.flight.departure }"></c:out></p>
+					<p>Departure Time: <fmt:formatDate type="time" pattern="hh:mm a" value="${seat.flight.departure_time}"/></p>
+					<p>Date: <fmt:formatDate type="date" value="${seat.flight.departure_time}" /></p>
 				</div>
-				<div>
-					<p>Arrival City <c:out value="${ seat.flight.destination }"></c:out></p>
-					<p>Arrival Time <c:out value="${ seat.flight.departure }"></c:out></p>
-					<p>Arrival Date <c:out value="${ seat.flight.arrival_time }"></c:out></p>
+				<div class ="minWidth">
+					<p>Arrival City: <c:out value="${ seat.flight.destination }"></c:out></p>
+					<p>Arrival Time: <c:out value="${ seat.flight.departure }"></c:out></p>
+					<p>Arrival Date: <fmt:formatDate type="date" value="${seat.flight.arrival_time}" /></p>
 				</div>
-				<c:forEach var="oneSeat" items="${ flight.seat }">
-				<div>
-					<p>Flight Price <c:out value="${ seat.price }"></c:out></p>
-					<p>Seat Number <c:out value="${ seat.id }"></c:out></p>
-					<p>Aisle Number <c:out value="${ seat.aisle }"></c:out></p>
-					<p>Flight Number <c:out value="${ seat.flight.id }"></c:out></p>
+				<div class ="minWidth">
+					<p>Flight Price: $<c:out value="${ seat.price }"></c:out></p>
+					<p>Seat: <c:out value="${ seat.aisle }"></c:out><c:out value="${ seat.id }"></c:out></p>
+					<p>Flight Number: <c:out value="${ seat.flight.id }"></c:out></p>
 				</div>
-				</c:forEach>
 
        		</div>
        	</div>
@@ -65,11 +63,11 @@
 			<h4>Summary of Charges</h4>
 			<div class="d-flex flex-column p-2">
 				<p>PNW SkyMiles:</p>
-				<p>Sub Total:</p>
-				<p>Additional Fees:</p>
-				<p>Taxes:</p>
+				<p>Sub Total: $<c:out value="${ seat.price }"></c:out></p>
+				<p>Additional Fees: Mile High Fee $4.20</p>
+				<p>Taxes: $<c:out value="${ seat.price *.10}"></c:out></p>
 				<p>Total Charges:</p>
-				<p>$ 432.85</p>
+				<p>$<c:out value="${ seat.price *1.10 + 4.20}"></c:out></p>
 				<form action="/login">
 				<button class="align-items-center">Checkout</button>
 				</form>

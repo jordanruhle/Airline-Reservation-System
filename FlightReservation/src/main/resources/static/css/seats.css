@@ -30,6 +30,7 @@ form {
 
 .square {
     display: text-align-center;
+    height: 50px;
 }
 
 .seat {
@@ -39,6 +40,9 @@ form {
     height: 100%;
     width: 100%;
 
+}
+.aisle{
+	background-color: white;
 }
 .nose {
     height: 370px;

@@ -39,11 +39,31 @@
             <div class=" square"><form action=""><button  class="seat">X</button></form></div>
             <div class=" square"><form action=""><button  class="seat">X</button></form></div>
         </div>
-        
-        <c:forEach var="seat" items="${allSeats}">
-        	<c:out value="${seat.price}" />
+        <div class="plane">
+	        <c:forEach var="seat" items="${allSeats}">
+	        	
+	        	
+	        	<c:choose>
+	        	
+	        		<c:when test = "${seat.user.id == null}">
+	        			<div class=" square"><form action="/seats/${seat.id}"><button  class="seat">L</button></form></div>
+	        		</c:when>
+	        		
+	        		<c:otherwise>
+	        			<div class=" square"><form action=""><button  class="seat">X</button></form></div>
+	        		</c:otherwise>
+	        		
+	        	</c:choose>
+	        	
+	        	<c:set var = "aisle" scope = "session" value ="${seat.aisle}"></c:set>
+	        		<c:set var = "C" scope = "session" value ="C"></c:set>
+	        		
+	        		<c:if test="${C.equals(aisle)}">        	
+	        			<div class=" square"><div class="aisle"></div></div>
+	        		</c:if>
+	        	
         </c:forEach>
-        
+        </div>
     </main>
 </body>
 </html>
