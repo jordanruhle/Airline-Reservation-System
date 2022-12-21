@@ -22,7 +22,7 @@
 		
 	</header>
 	<!--DROP DOWN SEARCH-->
-	<form:form method="POST" action="/flights" modelAttribute="flightObj" class="form-control">
+	<form:form method="POST" action="/flights" modelAttribute="flightObj">
 		<div class="d-flex justify-content-between form-control">
 			<select class="form-control">
 				<option value="SEA">SEA</option>
