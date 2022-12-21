@@ -80,8 +80,13 @@
         <artifactId>jquery</artifactId>
         <version>3.6.0</version>
     </dependency>
-        
-
+    
+    <!-- STRIPE API DEPENDENCY-->
+	<dependency>
+    	<groupId>com.stripe</groupId>
+    	<artifactId>stripe-java</artifactId>
+    	<version>4.2.0</version>
+	</dependency>
 	</dependencies>
 	
 
