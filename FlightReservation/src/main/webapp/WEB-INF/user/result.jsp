@@ -26,7 +26,7 @@
 				</div>
 			</c:otherwise>
 		</c:choose>
-        <a href='/checkout.html'>Checkout again</a>
+        <a href='/'>Return Home</a>
     </body>
 </body>
 </html>
