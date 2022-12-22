@@ -24,8 +24,8 @@
 	
 	<div class = "container-lg">
 	<!--DROP DOWN SEARCH-->
-	
-		<div class="d-flex justify-content-evenly ">
+		
+		<div class="d-flex justify-content-evenly mx-auto w-50">
 			<select class="form-control">
 				<option value="SEA">SEA</option>
 				<option value="PDX">PDX</option>
@@ -39,8 +39,8 @@
 	<!--BOOTSTRAP ARROW-->	
 			
 			<select class="form-control">
-				<option value="SEA">SEA</option>
 				<option value="PDX">PDX</option>
+				<option value="SEA">SEA</option>
 				<option value="BOI">BOI</option>
 				<option value="ANC">ANC</option>
 			</select>
@@ -51,6 +51,7 @@
 			</svg>
 	<!--BOOTSTRAP SPYGLASS SEARCH BTN-->		
 		</div>
+		
 		<br/>
 <!-- =========================================================================================================================================================== -->		
 	<!-- SORT BUTTONS -->	
@@ -77,11 +78,11 @@
 			<table class="table table-dark table-striped">
 	            <thead>
 	                <tr>
-	                
 	                    <th>Date</th>
+	                    <th>Departure City</th>
+	                    <th>Destination City</th>
 	                    <th>Departure Time</th>
 	                    <th>Arrival Time</th>
-	                    <th>Price</th>
 	                    <th>Select</th>
 	                </tr>
 	            </thead>
@@ -89,10 +90,11 @@
 	                <c:forEach var="flight" items="${allFlights}">
 	                    <tr >
 	                      	<td><fmt:formatDate type="date" value="${flight.departure_time}" /></td>
+	                      	<td><c:out value="${flight.departure}" /></td>
+	                      	<td><c:out value="${flight.destination}" /></td>
 	                        <td><fmt:formatDate type="time" pattern="hh:mm a" value="${flight.departure_time}" /></td> 	
 	                        <td><fmt:formatDate type="time" pattern="hh:mm a" value="${flight.arrival_time}" /></td> 	
-	                        <td><c:out value="${seat.flight.price}" /></td>
-	                        <td class="d-flex">
+	                        <td class="">
 								<form action="/seats/${flight.id}/picker">
 	        						<button class="btn btn-primary me-2">Choose Seat</button>
 	        					</form>
@@ -105,7 +107,7 @@
 				
 	<!-- TABLE -->
 <!-- =========================================================================================================================================================== -->		
-	
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

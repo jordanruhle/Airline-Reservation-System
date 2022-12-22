@@ -22,9 +22,9 @@
 		
 	</header>
 	<!--DROP DOWN SEARCH-->
-	<form:form action="/flights" method="GET">
-		<div class="d-flex justify-content-between form-control">
-			<select class="form-control">
+	<form:form action="/flights" method="GET" class=" mx-auto w-50">
+		<div class="d-flex px-5 justify-content-center">
+			<select class="form-control ">
 				<option value="SEA">SEA</option>
 				<option value="PDX">PDX</option>
 				<option value="BOI">BOI</option>
