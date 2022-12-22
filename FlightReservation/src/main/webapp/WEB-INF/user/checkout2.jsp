@@ -29,13 +29,13 @@
     </header>
 <!-- HEADER -->
 <!-- =========================================================================================================================================================== -->		
+    
 <!-- =========================================================================================================================================================== -->		
 <!-- CHECKOUT FORM  -->
-
 	<div class="mainContent d-flex align-items-center justify-content-center">
 		<div class="regForm bg-light p-3">
-			<form action="/charge" class="container-sm" method="POST">
-		<h1>Payment Information</h1>
+			<form action="/payment" class="container-sm" method="POST">
+		<h1>Billing Address</h1>
 				<div class="row">
 					<div class="col-md-6 mb-4">
 						<div class="form-outline">
@@ -52,6 +52,13 @@
 						</div>
 					</div>
 				</div>
+			<!--  
+					<div class="form-outline mb-4">
+						<label class="form-label">Date of Birth</label>
+						<input path="dob" type="date" class="form-control form-control-lg" />
+						<errors path="dob" />
+					</div>
+			-->
 					<div class="form-outline mb-4">
 						<label class="form-label">Email</label>
 						<input path="email" class="form-control form-control-lg" />
@@ -135,24 +142,6 @@
 						</div>
 					</div>
 			</form>
-					   <form action="/charge" method="POST" id="checkout-form">
-						    <input type="hidden" value="${amount}" name="amount" />
-						    <h2>Price: $<c:out value="${amount/100}" /></h2>
-						    <!-- NOTE: data-key/data-amount/data-currency will be rendered by Thymeleaf -->
-						    <script
-						       src="https://checkout.stripe.com/checkout.js" 
-						       class="stripe-button"
-						
-						       data-key="${stripePublicKey}"
-						       data-amount="${amount}" 
-						       data-currency="${currency}"
-						       data-name="PNW Airlines"
-						       data-description="PNW Airlines Checkout"
-						
-						       data-locale="auto"
-						       data-zip-code="false">
-						   </script>
-						</form>
 		</div>
 	</div>
 <!-- CHECKOUT FORM  -->

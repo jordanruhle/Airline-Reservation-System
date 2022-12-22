@@ -59,16 +59,16 @@ public class UserController {
 	// ----------- PROCESS REGISTRATION -----------
 
 	// ----------- CHECKOUT -----------
-	@GetMapping("/checkout")
-	public String checkout(
-		HttpSession session,
-		@ModelAttribute("newPaymentInfo") User emptyPaymentInfo
-	) {
-		if(session.getAttribute("user_id") == null) {
-			return "redirect:/login";
-		}
-		return "user/checkout.jsp";
-	}
+//	@GetMapping("/checkout")
+//	public String checkout(
+//		HttpSession session,
+//		@ModelAttribute("newPaymentInfo") User emptyPaymentInfo
+//	) {
+//		if(session.getAttribute("user_id") == null) {
+//			return "redirect:/login";
+//		}
+//		return "user/checkout.jsp";
+//	}
 	// ----------- CHECKOUT -----------
 	// ----------- PAYMENT ------------
 	@GetMapping("/payment")
