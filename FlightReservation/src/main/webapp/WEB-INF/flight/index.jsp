@@ -22,9 +22,9 @@
 		
 	</header>
 	<!--DROP DOWN SEARCH-->
-	<form:form action="/flights" method="GET" class=" mx-auto w-50">
+	<form:form action="/flights" method="POST" class=" mx-auto w-50">
 		<div class="d-flex px-5 justify-content-center">
-			<select class="form-control ">
+			<select name="departure" class="form-control ">
 				<option value="SEA">SEA</option>
 				<option value="PDX">PDX</option>
 				<option value="BOI">BOI</option>
@@ -35,7 +35,7 @@
   				<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
 			</svg>
 	<!--BOOTSTRAP ARROW-->	
-			<select class="form-control">
+			<select name="destination" class="form-control">
 				<option value="SEA">SEA</option>
 				<option value="PDX">PDX</option>
 				<option value="BOI">BOI</option>

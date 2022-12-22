@@ -3,6 +3,7 @@ package com.pnwairlines.flightreservation.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import com.pnwairlines.flightreservation.models.Flight;
@@ -37,4 +38,10 @@ public class FlightService {
 		flightRepo.deleteById(id);
 	}
 	// ----DELETE----
+	
+	// ----FIND ALL BY ARRIVAL AND DEPARTURE-----
+	public List<Flight> findArrivalDeparture(String departure, String arrival) {
+		return flightRepo.test(departure, arrival);
+	}
+	// ----FIND ALL BY ARRIVAL AND DEPARTURE-----	
 }
