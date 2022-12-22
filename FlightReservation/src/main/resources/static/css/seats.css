@@ -11,7 +11,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center ;
+    align-items: center;
 }
 
 form {
@@ -30,6 +30,7 @@ form {
     color: white;
     height: 100%;
     width: 100%;
+    background-color: #1d2336;
 
 }
 .aisle{
@@ -47,6 +48,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    background-color:#adb5bd;
 }
 
 .body-continer {
@@ -64,6 +66,7 @@ form {
     grid-template-rows: 50px;
     padding-left: 5px;
     padding-right: 5px;
+    background-color: #adb5bd;
     
 }
 
@@ -73,6 +76,7 @@ form {
     background-color: black;
     clip-path: polygon( 100% 38%, 100% 87%, 77% 87%, 0% 100%, 5% 86%);
     border: 1px solid black;
+    
 }
 
 .right-wing {
@@ -107,6 +111,7 @@ form {
     border-radius: 100% 100% 0 0;
     border-bottom: 50% solid black;
     z-index: 2;
+    background-color: #adb5bd;
 }
 
 
@@ -115,3 +120,7 @@ button {
     font-weight: bold;
 }
 
+body{
+	background-image: url("https://cdn.pixabay.com/photo/2018/11/25/09/37/clouds-3837043_960_720.jpg");
+	background-size: cover;
+}
