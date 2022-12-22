@@ -42,6 +42,11 @@ public class SeatService {
 	public Seat getSeatWhereId(Long id) {
 		return null;
 	}
+	
+	// RESERVE SEAT
+	public void reserveSeat(Long user_id, Long id) {
+		seatRepo.reserveSeat(user_id, id);
+	}
 
 }
 

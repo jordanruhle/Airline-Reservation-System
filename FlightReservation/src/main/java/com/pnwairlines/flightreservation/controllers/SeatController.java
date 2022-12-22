@@ -45,6 +45,7 @@ public class SeatController {
 				HttpSession session, 
 				Model model
 			) {
+				session.setAttribute("seat_id", id);
 				model.addAttribute("seat", seatServ.getOne(id));
 				return "seat/cart.jsp";
 			}

@@ -1,5 +1,7 @@
 package com.pnwairlines.flightreservation.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.pnwairlines.flightreservation.models.ChargeRequest;
+import com.pnwairlines.flightreservation.repositories.SeatRepository;
+import com.pnwairlines.flightreservation.services.SeatService;
 import com.pnwairlines.flightreservation.services.StripeService;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
@@ -17,9 +21,13 @@ public class ChargeController {
 
     @Autowired
     private StripeService paymentsService;
+    
+    @Autowired
+    private SeatService seatService;
+    
 
     @PostMapping("/charge")
-    public String charge(ChargeRequest chargeRequest, Model model)
+    public String charge(ChargeRequest chargeRequest, Model model, HttpSession session)
       throws StripeException {
         chargeRequest.setDescription("Example charge");
         chargeRequest.setCurrency("usd");
@@ -28,7 +36,10 @@ public class ChargeController {
         model.addAttribute("status", charge.getStatus());
         model.addAttribute("chargeId", charge.getId());
         model.addAttribute("balance_transaction", charge.getBalanceTransaction());
-        return "redirect:/user/result.jsp";
+        Long seat_id = (Long)  session.getAttribute("seat_id");
+        Long user_id = (Long)  session.getAttribute("user_id");
+        seatService.reserveSeat(user_id, seat_id );
+        return "/user/result.jsp";
     }
 
     @ExceptionHandler(StripeException.class)

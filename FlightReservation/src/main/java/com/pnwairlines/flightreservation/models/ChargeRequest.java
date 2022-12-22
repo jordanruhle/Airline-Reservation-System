@@ -1,6 +1,6 @@
 package com.pnwairlines.flightreservation.models;
 
-@Data
+
 public class ChargeRequest {
 	
 	public enum Currency {
