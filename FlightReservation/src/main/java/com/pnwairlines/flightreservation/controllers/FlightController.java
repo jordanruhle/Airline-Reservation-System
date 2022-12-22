@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pnwairlines.flightreservation.models.Flight;
 import com.pnwairlines.flightreservation.models.Seat;
@@ -126,12 +127,15 @@ public class FlightController {
 // ----------- READ ALL ---------------//
 	
 // ----------- FLIGHT SEARCH ---------------//
-	@GetMapping("/flights")
+	@PostMapping("/flights")
 	public String index(
+			@RequestParam("departure") String departure,
+			@RequestParam("destination") String destination,
 			HttpSession session, 
 			Model model
 			) {
-		model.addAttribute("allFlights", flightService.getAll());
+		model.addAttribute("allFlights", flightService.findArrivalDeparture(departure, destination));
+		System.out.println(flightService.findArrivalDeparture(departure, destination));
 		return "/flight/search.jsp";
 	}
 // ----------- FLIGHT SEARCH ---------------//
