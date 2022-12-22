@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import com.pnwairlines.flightreservation.models.ChargeRequest;
-import com.pnwairlines.flightreservation.models.ChargeRequest.Currency;
 import com.pnwairlines.flightreservation.services.StripeService;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
@@ -22,7 +22,7 @@ public class ChargeController {
     public String charge(ChargeRequest chargeRequest, Model model)
       throws StripeException {
         chargeRequest.setDescription("Example charge");
-        chargeRequest.setCurrency(Currency.usd);
+        chargeRequest.setCurrency("usd");
         Charge charge = paymentsService.charge(chargeRequest);
         model.addAttribute("id", charge.getId());
         model.addAttribute("status", charge.getStatus());
