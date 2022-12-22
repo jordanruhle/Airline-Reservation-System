@@ -27,31 +27,36 @@
     </header>
 	<main>
         <div class="nose">
-            <!-- <div class="window"><div class="windowBottom"></div></div> -->
-            <img src="project\static\icons8-seat-basicons-—-solid.zip" class="seatIcon"alt="">
+            <div class="window">
+                <div class="windowBottom"></div>
+            </div>
         </div>
-        <div class="plane">
-	        <c:forEach var="seat" items="${allSeats}">
-	        	<c:choose>
-	        	
-	        		<c:when test = "${seat.user.id == null}">
-	        			<div class=" square"><form action="/seats/${seat.id}"><button  class="seat">L</button></form></div>
-	        		</c:when>
-	        		
-	        		<c:otherwise>
-	        			<div class=" square"><form action=""><button  class="seat">X</button></form></div>
-	        		</c:otherwise>
-	        		
-	        	</c:choose>
-	        	
-	        	<c:set var = "aisle" scope = "session" value ="${seat.aisle}"></c:set>
-	        		<c:set var = "C" scope = "session" value ="C"></c:set>
-	        		
-	        		<c:if test="${C.equals(aisle)}">        	
-	        			<div class=" square"><div class="aisle"></div></div>
-	        		</c:if>
-	        	
-        </c:forEach>
+        <div class="body-continer">
+	        <div class="left-wing"></div>
+	        <div class="plane">
+		        <c:forEach var="seat" items="${allSeats}">
+		        	<c:choose>
+		        	
+		        		<c:when test = "${seat.user.id == null}">
+		        			<div class=" square"><form action="/seats/${seat.id}"><button  class="seat">L</button></form></div>
+		        		</c:when>
+		        		
+		        		<c:otherwise>
+		        			<div class=" square"><form action=""><button  class="seat">X</button></form></div>
+		        		</c:otherwise>
+		        		
+		        	</c:choose>
+		        	
+		        	<c:set var = "aisle" scope = "session" value ="${seat.aisle}"></c:set>
+		        		<c:set var = "C" scope = "session" value ="C"></c:set>
+		        		
+		        		<c:if test="${C.equals(aisle)}">        	
+		        			<div class=" square"><div class="aisle"></div></div>
+		        		</c:if>
+		        	
+	        </c:forEach>
+	        </div>
+	      <div class="right-wing"></div>
         </div>
     </main>
 </body>
