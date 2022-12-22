@@ -11,23 +11,13 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center ;
+    align-items: center;
 }
 
 form {
     height: 100%;
 }
 
-.plane {
-    margin: 0px auto;
-    display: grid;
-    grid-template-columns: 50px 50px 50px 40px 50px 50px 50px;
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-    grid-template-rows: 50px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-}
 
 .square {
     display: text-align-center;
@@ -40,16 +30,97 @@ form {
     color: white;
     height: 100%;
     width: 100%;
+    background-color: #1d2336;
 
 }
 .aisle{
 	background-color: white;
 }
+
 .nose {
+    border-left:  3px solid black;
+    border-right:  3px solid black;
+    border-top: 1px solid black;
     height: 370px;
-    width: 372px;
+    width: 388px;
+    border-radius: 50% 50% 46% 54% / 100% 100% 0% 0%;
+    border-bottom: 50% solid black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color:#adb5bd;
+}
+
+.body-continer {
+    display: flex;
+}
+
+.plane {
+    border-left:  3px solid black;
+    border-right:  3px solid black;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 50px 50px 50px 40px 50px 50px 50px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    grid-template-rows: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #adb5bd;
+    
+}
+
+.left-wing {
+    width: 800px;
+    height: 800px;
+    background-color: black;
+    clip-path: polygon( 100% 38%, 100% 87%, 77% 87%, 0% 100%, 5% 86%);
+    border: 1px solid black;
+    
+}
+
+.right-wing {
+    width: 800px;
+    height: 800px;
+    background-color: black;
+    clip-path: polygon(95% 86%, 100% 100%, 23% 87%, 0 87%, 0% 38%);
+    border: 1px solid black;
+    
+}
+
+.window {
+    height: 50%;
+    width: 80%;
+    background-color: black;
     border-radius: 100% 100% 0 0;
     border-bottom: 50% solid black;
-    border: 1px solid black;
-    border-bottom: none;
+    z-index: 1;
+    position: relative;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.windowBottom {
+    height: 50%;
+    width: 360px;
+    background-color: white;
+    border-radius: 100% 100% 0 0;
+    border-bottom: 50% solid black;
+    z-index: 2;
+    background-color: #adb5bd;
+}
+
+
+button {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+body{
+	background-image: url("https://cdn.pixabay.com/photo/2018/11/25/09/37/clouds-3837043_960_720.jpg");
+	background-size: cover;
 }
