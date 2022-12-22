@@ -28,7 +28,7 @@ public class ChargeController {
         model.addAttribute("status", charge.getStatus());
         model.addAttribute("chargeId", charge.getId());
         model.addAttribute("balance_transaction", charge.getBalanceTransaction());
-        return "redirect:/user/result.jsp";
+        return "/user/result.jsp";
     }
 
     @ExceptionHandler(StripeException.class)
