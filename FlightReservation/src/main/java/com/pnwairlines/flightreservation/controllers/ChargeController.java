@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.pnwairlines.flightreservation.models.ChargeRequest;
 import com.pnwairlines.flightreservation.repositories.SeatRepository;
+import com.pnwairlines.flightreservation.services.SeatService;
 import com.pnwairlines.flightreservation.services.StripeService;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
@@ -22,7 +23,8 @@ public class ChargeController {
     private StripeService paymentsService;
     
     @Autowired
-    private SeatRepository seatRepository;
+    private SeatService seatService;
+    
 
     @PostMapping("/charge")
     public String charge(ChargeRequest chargeRequest, Model model, HttpSession session)
@@ -36,7 +38,7 @@ public class ChargeController {
         model.addAttribute("balance_transaction", charge.getBalanceTransaction());
         Long seat_id = (Long)  session.getAttribute("seat_id");
         Long user_id = (Long)  session.getAttribute("user_id");
-        seatRepository.setUserIdForSeat(user_id, seat_id );
+        seatService.reserveSeat(user_id, seat_id );
         return "/user/result.jsp";
     }
 
