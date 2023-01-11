@@ -51,7 +51,7 @@
 				</div>
 				<div class ="minWidth">
 					<h4 class="my-4">Arrival City: <c:out value="${ seat.flight.destination }"></c:out></h4>
-					<h4 class="my-4">Arrival Time: <c:out value="${ seat.flight.departure }"></c:out></h4>
+					<h4 class="my-4">Arrival Time: <fmt:formatDate type="time" pattern="hh:mm a" value="${seat.flight.arrival_time}"/></h4>
 					<h4 class="my-4">Arrival Date: <fmt:formatDate type="date" value="${seat.flight.arrival_time}" /></h4>
 				</div>
 				<div class ="minWidth">
