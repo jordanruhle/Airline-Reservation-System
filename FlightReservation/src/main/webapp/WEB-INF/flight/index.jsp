@@ -55,9 +55,18 @@
 <!-- =========================================================================================================================================================== -->		
 		
 	<!--Airplane Picture / Slogan  -->
-		<div>
+		<div class="d-flex justify-content-center">
 			<img src="https://www.munichre.com/content/dam/munichre/mrm/royalty-free-shutterstock/shutterstock_41347264.jpg/_jcr_content/renditions/cropped.16_to_9.jpg./cropped.16_to_9.jpg" class="mw-100" alt="Placeholder">
 		</div>
+		
+	<footer class="d-flex justify-content-around ">
+		<div>Fly With Us</div>	
+		<div>About Us</div>	
+		<div>Contact Us</div>	
+		<div>Connect With the Devs</div>
+		<hr/>
+		<br/>	
+	</footer>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
