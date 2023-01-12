@@ -23,7 +23,7 @@
 	<div class="stripe p-3">
 	<form:form action="/flights" method="POST" class="d-flex justify-content-center gap-5 align-items-start mx-auto w-75" >
 	<div class="col-6">
-		<h2 class="text-white mx-auto mb-3" >Welcome. Let's go Somewhere.</h2>
+		<h2 class="text-white mx-auto mb-3" >Plan your next adventure.</h2>
 		<div class="d-flex justify-content-center align-items-center mx-auto search">
 			<select name="departure" class="form-control ">
 				<option value="SEA">SEA</option>
