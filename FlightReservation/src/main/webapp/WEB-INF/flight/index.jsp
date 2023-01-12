@@ -15,24 +15,23 @@
 <title>PNW Airlines</title>
 </head>
 <body>
-	<header class="d-flex bd-highlight mb-3 p-3 header">
-		<img alt="PNW Logo" src="<c:url value='/FlightReservation/src/main/resources/static/PnwLogo.png' />">
-		
+	<header class="d-flex bd-highlight p-3 header">
+		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
 	</header>
 	<!--DROP DOWN SEARCH-->
 	<div class="stripe p-3">
 	<form:form action="/flights" method="POST" class="d-flex justify-content-center gap-5 align-items-start mx-auto w-75" >
 	<div class="col-6">
 		<h2 class="text-white mx-auto mb-3" >Plan your next adventure.</h2>
-		<div class="d-flex justify-content-center align-items-center mx-auto search">
+		<div class="d-flex justify-content-center align-items-center mx-auto search gap-2">
 			<select name="departure" class="form-control ">
 				<option value="SEA">SEA</option>
 				<option value="PDX">PDX</option>
 				<option value="BOI">BOI</option>
 				<option value="ANC">ANC</option>
 			</select>
-	<!--BOOTSTRAP ARROW-->		
-			<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+	<!--BOOTSTRAP ARROW-->	
+			<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" class="bi bi-arrow-right" viewBox="0 0 16 16">
   				<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
 			</svg>
 	<!--BOOTSTRAP ARROW-->	
@@ -59,16 +58,19 @@
 <!-- =========================================================================================================================================================== -->		
 		
 	<!--Airplane Picture / Slogan  -->
-		<div class="banner"></div> 
+	<div class="banner">
+		<h1 class="banner-text">Fly PNW Airlines</h1>
+	</div> 
 		
-	<footer class="d-flex justify-content-around ">
-		<div>Fly With Us</div>	
-		<div>About Us</div>	
-		<div>Contact Us</div>	
-		<div>Connect With the Devs</div>
-		<hr/>
-		<br/>	
+	<!-- <footer class="py-3 d-flex justify-content-around">
+		<ul>
+			<li>Fly With Us</li>	
+			<li>About Us</li>	
+			<li>Contact Us</li>	
+			<li>Connect With the Devs</li>
+		</ul>	
 	</footer>
+	<div class="break"></div> -->
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

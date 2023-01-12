@@ -1,12 +1,19 @@
 @charset "ISO-8859-1";
 
 .banner {
-	background-image: url("../banner.PNG");
+	background-image: url("../PNWBannerClouds2.PNG");
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
-	padding-top: 26.4%
+	padding-top: 10%;
+	padding-bottom: 10%;
 	
+}
+
+.banner-text {
+	font-size: 140px;
+	padding-left: 15%;
+	color: white;
 }
 
 .border {
@@ -26,3 +33,12 @@
 	color: #CB310B;
 }
 
+.break {
+	width: 80%;
+	border: 1px solid gray;
+}
+
+.pnwLogo {
+	width: 200px;
+	height: 100px;
+}
