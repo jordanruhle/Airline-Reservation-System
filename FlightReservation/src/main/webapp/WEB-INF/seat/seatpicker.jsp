@@ -38,7 +38,7 @@
 		        	<c:choose>
 		        	
 		        		<c:when test = "${seat.user.id == null}">
-		        			<div class=" square"><form action="/seats/${seat.id}"><button  class="seat">L</button></form></div>
+		        			<div class=" square"><form action="/seats/${seat.id}"><button  class="seat"><img class="seatIcon" src="${pageContext.request.contextPath}/seatLogo.png"></button></form></div>
 		        		</c:when>
 		        		
 		        		<c:otherwise>
