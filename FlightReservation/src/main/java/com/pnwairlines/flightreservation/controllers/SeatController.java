@@ -28,10 +28,11 @@ public class SeatController {
 	// ----------- VIEW ALL SEATS BY FLIGHT ---------------//
 			@GetMapping("/seats/{id}/picker")
 			public String index(
+					@PathVariable("id") Long id,
 				HttpSession session, Model model
 			) {
 				
-				model.addAttribute("allSeats", seatServ.getAll());
+				model.addAttribute("allSeats", seatServ.getSeatsByFlightId(id));
 				return "/seat/seatpicker.jsp";
 			}
 	// ----------- VIEW ALL SEATS BY FLIGHT ---------------//
