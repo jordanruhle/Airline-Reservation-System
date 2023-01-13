@@ -16,7 +16,7 @@
 
 <title>Flight Search</title>
 </head>
-<body>
+<body class="background-blue min-vh-100">
 		<header class="d-flex bd-highlight p-3 header bg-secondary">
 		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
 	</header>
@@ -56,7 +56,7 @@
 	</form:form >
 	</div>		
 <!-- =========================================================================================================================================================== -->		
-	<main class="background-blue">
+	<main class="background-blue h-100">
 	<!-- SORT BUTTONS -->	
 		<div class = "d-flex justify-content-evenly p-3">
 			<form action="#">

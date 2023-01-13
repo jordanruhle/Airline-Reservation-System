@@ -43,6 +43,21 @@
 	height: 100px;
 }
 
+.pnwLogo-sm {
+	width: 75px;
+	height: 75px;
+	border: 3px solid white;
+	border-radius: 50%;
+}
+
 .background-blue {
 	background-color: #111224;
+}
+
+body {
+	border: 1px solid black;
+}
+
+.flex-basis-0 {
+	flex-basis: 33%;
 }
