@@ -31,16 +31,17 @@
                 <div class="windowBottom"></div>
             </div>
         </div>
-        <div class="body-continer">
+        <div class="body-container">
 	        <div class="left-wing"></div>
 	        <div class="plane">
 		        <c:forEach var="seat" items="${allSeats}">
 		        	<c:choose>
-		        	
+
 		        		<c:when test = "${seat.user.id == null}">
 		        			<div class=" square"><form action="/seats/${seat.id}"><button  class="seat"><img class="seatIcon" src="${pageContext.request.contextPath}/seatLogo.png"></button></form></div>
 		        		</c:when>
 		        		
+
 		        		<c:otherwise>
 		        			<div class=" square"><form action=""><button  class="seat">X</button></form></div>
 		        		</c:otherwise>
@@ -51,12 +52,19 @@
 		        		<c:set var = "C" scope = "session" value ="C"></c:set>
 		        		
 		        		<c:if test="${C.equals(aisle)}">        	
-		        			<div class=" square"><div class="aisle"></div></div>
+		        			<div class=" square"><div class="aisle"><c:out value="${seat.row}"></c:out></div></div>
 		        		</c:if>
 		        	
 	        </c:forEach>
 	        </div>
 	      <div class="right-wing"></div>
+        </div>
+        <div class="body-container">
+         <div class="rear-left-wing"></div>
+        <div class="tail">
+        	<div class="vertical-stabilizer"></div>
+        </div>
+        <div class="rear-right-wing"></div>
         </div>
     </main>
 </body>

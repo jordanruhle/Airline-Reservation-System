@@ -33,8 +33,12 @@ form {
     background-color: #1d2336;
 
 }
-.aisle{
-	background-color: white;
+.aisle {
+	text-align: center;
+	margin: auto;
+	padding: 9px 0px;
+	font-size: 20px;
+	font-weight: 600;
 }
 
 .nose {
@@ -50,8 +54,23 @@ form {
     align-items: flex-end;
     background-color:#adb5bd;
 }
+.tail {
+	position: relative;
+    border-left:  3px solid black;
+    border-right:  3px solid black;
+    border-bottom: 1px solid black;
+    height: 500px;
+    width: 386px;
+    border-radius: 46% 54% 40% 40% / 0% 0% 100% 100% ;
+    border-bottom: 50% solid black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color:#adb5bd;
+    z-index: 2;
+}
 
-.body-continer {
+.body-container {
     display: flex;
 }
 
@@ -82,6 +101,43 @@ form {
 .right-wing {
     width: 800px;
     height: 800px;
+    background-color: black;
+    clip-path: polygon(95% 86%, 100% 100%, 23% 87%, 0 87%, 0% 38%);
+    border: 1px solid black;
+    
+}
+
+.vertical-stabilizer {
+	height: 500px;
+	width: 300px;
+	position: relative;
+	top: 200px;
+	clip-path: polygon(40% 18%, 43% 0, 57% 0, 60% 18%, 52% 100%, 48% 100%);
+	background-color: black;
+	z-index: 3;
+	border-radius: 50%;
+}
+
+.rear-left-wing {
+	align-self: center;
+	position: relative;
+	bottom: 50px;
+	left: 200px;
+    width: 600px;
+    height: 600px;
+    background-color: black;
+    clip-path: polygon( 100% 38%, 100% 87%, 77% 87%, 0% 100%, 5% 86%);
+    border: 1px solid black;
+    
+}
+
+.rear-right-wing {
+	align-self: center;
+	position: relative;
+	bottom: 50px;
+	right: 200px;
+    width: 600px;
+    height: 600px;
     background-color: black;
     clip-path: polygon(95% 86%, 100% 100%, 23% 87%, 0 87%, 0% 38%);
     border: 1px solid black;
@@ -129,4 +185,5 @@ button {
 body{
 	background-image: url("https://cdn.pixabay.com/photo/2018/11/25/09/37/clouds-3837043_960_720.jpg");
 	background-size: cover;
+	padding-bottom: 230px;
 }
