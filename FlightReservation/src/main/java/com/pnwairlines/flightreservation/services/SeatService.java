@@ -38,10 +38,11 @@ public class SeatService {
 	}
 	
 	// GET ALL SEATS BY FLIGHT ID
-	@Query(value="SELECT * FROM seats WHERE flight_id = ?1", nativeQuery=true)
-	public Seat getSeatWhereId(Long id) {
-		return null;
+	public List<Seat> getSeatsByFlightId(Long flight_id) {
+		return seatRepo.getSeatWhereId(flight_id);
 	}
+	
+
 	
 	// RESERVE SEAT
 	public void reserveSeat(Long user_id, Long id) {

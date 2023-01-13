@@ -15,7 +15,7 @@
 <title>PNW Airlines</title>
 </head>
 <body>
-	<header class="d-flex bd-highlight p-3 header">
+	<header class="d-flex bd-highlight p-3 header bg-secondary">
 		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
 	</header>
 	<!--DROP DOWN SEARCH-->

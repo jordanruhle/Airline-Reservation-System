@@ -20,6 +20,9 @@ public interface SeatRepository extends CrudRepository<Seat, Long> {
 @Query(value="UPDATE seats SET user_id = ?1 WHERE id = ?2", nativeQuery=true)
 void reserveSeat(Long user_id, Long id);
 
+@Query(value="SELECT * FROM seats WHERE flight_id = ?1", nativeQuery=true)
+public List<Seat> getSeatWhereId(Long id);
+
 //
 //@Modifying
 //@Query("update seat d set d.user_id = ?1 WHERE d.id = ?2")
