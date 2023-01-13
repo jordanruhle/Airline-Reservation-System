@@ -29,64 +29,69 @@
 	</header>
 	<!-- ----------- HEADER ----------- -->
 	
-	<main class="main d-flex justify-content-center p-5  background-blue">
+	<main class="main d-flex justify-content-center py-5 background-blue">
 	
 	<!-- ----------- FLIGHT DETAILS ----------- -->
 	<!-- ----------- FLIGHT DETAILS HEADER ----------- -->
-		<div class="detailsCard border-dark">
-			<div class="d-flex justify-content-between card-header p-4 bg-dark bg-gradient text-light align-items-center">
+		<div class="col-5">
+			<div class="d-flex justify-content-between card-header py-4 px-5 bg-dark bg-gradient text-light align-items-center">
 				<img class="pnwLogo-sm" src="${pageContext.request.contextPath}/PnwLogoNoText.png">
-	       		<h2 class="detailsText text-uppercase">Flight Details</h2>
-	       		<a href="/seats/${seat.flight.id}/picker" class="btn btn-danger">Remove</a> 
+	       		<h2 class="text-uppercase">Flight Details</h2>
+	       		<a href="/seats/${seat.flight.id}/picker" class="btn btn-primary">Remove</a> 
 	       	</div>
 	<!-- ----------- FLIGHT DETAILS HEADER ----------- -->
 	       	
 	<!-- ----------- FLIGHT DETAILS BODY ----------- -->
-	       	<div class="flightDetails card-body d-flex justify-content-between gap-5 p-4 border-dark border border-5 rounded-top bg-dark">
-				<div class ="minWidth flex-basis-0">
-					<div class="d-flex justify-content-between my-4">
-						<h4 class="text-white">Departure City: </h4>
-						<h4 class="text-white"><c:out value="${ seat.flight.departure }"></c:out></h4>
+	       	<div class="card-body gap-5 py-4 px-5 rounded-bottom bg-dark minWidth">
+	       	
+		       	<div class="row minWidth">
+		       	
+					<div class ="minWidth col">
+						<div class="d-flex justify-content-between my-4">
+							<h4 class="text-white">Departure City: </h4>
+							<h4 class="text-white"><c:out value="${ seat.flight.departure }"></c:out></h4>
+						</div>
+						<div class="d-flex justify-content-between gap-3 my-4">
+							<h4 class="text-white">Departure Time: </h4>
+							<h4 class="text-white"><fmt:formatDate type="time" pattern="hh:mm a" value="${seat.flight.departure_time}"/></h4>
+						</div>
+						<div class="d-flex justify-content-between my-4">
+							<h4 class="text-white">Date: </h4>
+							<h4 class="text-white"><fmt:formatDate type="date" value="${seat.flight.departure_time}" /></h4>
+						</div>
 					</div>
-					<div class="d-flex justify-content-between my-4">
-						<h4 class="text-white">Departure Time: </h4>
-						<h4 class="text-white"><fmt:formatDate type="time" pattern="hh:mm a" value="${seat.flight.departure_time}"/></h4>
+					
+					<div class ="minWidth col">
+						<div class="d-flex justify-content-between my-4">
+							<h4 class="text-white">Arrival City: </h4>
+							<h4 class="text-white"><c:out value="${ seat.flight.destination }"></c:out></h4>
+						</div>
+						<div class="d-flex justify-content-between my-4">
+							<h4 class="text-white">Arrival Time: </h4>
+							<h4 class="text-white"><fmt:formatDate type="time" pattern="hh:mm a" value="${seat.flight.arrival_time}"/></h4>
+						</div>
+						<div class="d-flex justify-content-between gap-3 my-4">
+							<h4 class="text-white">Arrival Date: </h4>
+							<h4 class="text-white"><fmt:formatDate type="date" value="${seat.flight.arrival_time}" /></h4>
+						</div>
 					</div>
-					<div class="d-flex justify-content-between my-4">
-						<h4 class="text-white">Date: </h4>
-						<h4 class="text-white"><fmt:formatDate type="date" value="${seat.flight.departure_time}" /></h4>
+					
+					<div class ="minWidth col">
+						<div class="d-flex justify-content-between my-4">
+							<h4 class="text-white">Flight Price: </h4>
+							<h4 class="text-white">$<c:out value="${ seat.price }"></c:out></h4>
+						</div>
+						<div class="d-flex justify-content-between my-4">
+							<h4 class="text-white">Seat: </h4>
+							<h4 class="text-white"><c:out value="${ seat.aisle }"></c:out><c:out value="${ seat.row }"></c:out></h4>
+						</div>
+						<div class="d-flex justify-content-between my-4">
+							<h4 class="text-white">Flight Number: </h4>
+							<h4 class="text-white"><c:out value="${ seat.flight.id }"></c:out></h4>
+						</div>
 					</div>
-				</div>
-				
-				<div class ="minWidth flex-basis-0">
-					<div class="d-flex justify-content-between my-4">
-						<h4 class="text-white">Arrival City: </h4>
-						<h4 class="text-white"><c:out value="${ seat.flight.destination }"></c:out></h4>
-					</div>
-					<div class="d-flex justify-content-between my-4">
-						<h4 class="text-white">Arrival Time: </h4>
-						<h4 class="text-white"><fmt:formatDate type="time" pattern="hh:mm a" value="${seat.flight.arrival_time}"/></h4>
-					</div>
-					<div class="d-flex justify-content-between my-4">
-						<h4 class="text-white">Arrival Date: </h4>
-						<h4 class="text-white"><fmt:formatDate type="date" value="${seat.flight.arrival_time}" /></h4>
-					</div>
-				</div>
-				
-				<div class ="minWidth flex-basis-0">
-					<div class="d-flex justify-content-between my-4">
-						<h4 class="text-white">Flight Price: </h4>
-						<h4 class="text-white">$<c:out value="${ seat.price }"></c:out></h4>
-					</div>
-					<div class="d-flex justify-content-between my-4">
-						<h4 class="text-white">Seat: </h4>
-						<h4 class="text-white"><c:out value="${ seat.aisle }"></c:out><c:out value="${ seat.row }"></c:out></h4>
-					</div>
-					<div class="d-flex justify-content-between my-4">
-						<h4 class="text-white">Flight Number: </h4>
-						<h4 class="text-white"><c:out value="${ seat.flight.id }"></c:out></h4>
-					</div>
-				</div>
+					
+		       	</div>
 
        		</div>
 	<!-- ----------- FLIGHT DETAILS BODY ----------- -->
@@ -97,31 +102,34 @@
        	
 	<!-- ----------- ORDER SUMMARY ----------- -->
 	
-		<div class="orderSummary border-dark border border-5 rounded-top bg-dark">
-			<h2 class="card-header p-4 bg-dark bg-gradient text-light text-uppercase">Summary of Charges</h2>
-			<div class="card-body p-4 border-dark border-5">
-				<div class="d-flex justify-content-between">
-					<h4 class="text-white my-4">PNW SkyMiles:</h4>
-					<h4 class="text-white my-4"> 12,309</h4>
-				</div>
-				<div class="d-flex justify-content-between">
-					<h4 class="text-white my-4">Sub Total:</h4>
-					<h4 class="text-white my-4">$<c:out value="${ seat.price }"></c:out></h4>
+		<div class="col-2">
+		
+	<!-- ----------- ORDER SUMMARY HEADER ----------- -->
+			<h2 class="card-header py-4 px-5 bg-dark bg-gradient text-light text-uppercase text-center ">Order Summary</h2>
+	<!-- ----------- ORDER SUMMARY HEADER ----------- -->
+
+	<!-- ----------- ORDER SUMMARY BODY ----------- -->
+			<div class="card-body px-5 bg-dark rounded-bottom">
+				<div class="d-flex justify-content-between my-4">
+					<h4 class="text-white">Sub Total:</h4>
+					<h4 class="text-white">$<c:out value="${ seat.price }"></c:out></h4>
 				</div>
 					
-				<div class="d-flex justify-content-between">
-					<h4 class="text-white my-4">Taxes:</h4>
-					<h4 class="text-white my-4">$<c:out value="${ seat.price *.10}"></c:out></h4>
+				<div class="d-flex justify-content-between my-4">
+					<h4 class="text-white">Taxes:</h4>
+					<h4 class="text-white">$<c:out value="${ seat.price *.10}"></c:out></h4>
 				</div>
-				<div class="d-flex justify-content-between">
-					<h4 class="text-white my-4">Total Charges:</h4>
-					<h4 class="text-white my-4">$<c:out value="${ seat.price *1.10}"></c:out></h4>
+				<div class="d-flex justify-content-between my-4">
+					<h4 class="text-white">Total Charges:</h4>
+					<h4 class="text-white">$<c:out value="${ seat.price *1.10}"></c:out></h4>
 				</div>
 				
-				<form action="/login">
-				<button class="align-items-center btn btn-primary">Checkout</button>
+				<form class="my-4" action="/login">
+				<button class="align-items-center btn btn-danger w-100">Checkout</button>
 				</form>
 			</div>
+	<!-- ----------- ORDER SUMMARY BODY ----------- -->
+	
 		</div>
 		
 	<!-- ----------- ORDER SUMMARY ----------- -->
