@@ -54,10 +54,3 @@
 	background-color: #111224;
 }
 
-body {
-	border: 1px solid black;
-}
-
-.flex-basis-0 {
-	flex-basis: 33%;
-}

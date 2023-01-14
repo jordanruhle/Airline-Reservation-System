@@ -20,7 +20,7 @@
 <meta charset="ISO-8859-1">
 <title>Flight Details</title>
 </head>
-<body>
+<body class="background-blue">
 
 
 	<!-- ----------- HEADER ----------- -->
@@ -29,12 +29,12 @@
 	</header>
 	<!-- ----------- HEADER ----------- -->
 	
-	<main class="main d-flex justify-content-center py-5 background-blue">
+	<main class="main d-flex justify-content-center py-5 background-blue h-100">
 	
 	<!-- ----------- FLIGHT DETAILS ----------- -->
+		<div class="col-6">
 	<!-- ----------- FLIGHT DETAILS HEADER ----------- -->
-		<div class="col-5">
-			<div class="d-flex justify-content-between card-header py-4 px-5 bg-dark bg-gradient text-light align-items-center">
+			<div class="d-flex justify-content-between card-header py-4 px-5 bg-dark bg-gradient text-light align-items-center w-100">
 				<img class="pnwLogo-sm" src="${pageContext.request.contextPath}/PnwLogoNoText.png">
 	       		<h2 class="text-uppercase">Flight Details</h2>
 	       		<a href="/seats/${seat.flight.id}/picker" class="btn btn-primary">Remove</a> 

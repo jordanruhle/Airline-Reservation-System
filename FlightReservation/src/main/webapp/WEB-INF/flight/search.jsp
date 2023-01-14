@@ -16,7 +16,7 @@
 
 <title>Flight Search</title>
 </head>
-<body class="background-blue min-vh-100">
+<body class="background-blue ">
 		<header class="d-flex bd-highlight p-3 header bg-secondary">
 		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
 	</header>
@@ -25,7 +25,7 @@
 	<form:form action="/flights" method="POST" class="d-flex justify-content-center gap-5 align-items-start mx-auto w-75" >
 	<div class="col-6">
 		<h2 class="text-white mx-auto mb-3" >Plan your next adventure.</h2>
-		<div class="d-flex justify-content-center align-items-center mx-auto search gap-2">
+		<div class="d-flex justify-content-center align-items-center mx-auto gap-2">
 			<select name="departure" class="form-control ">
 				<option value="SEA">SEA</option>
 				<option value="PDX">PDX</option>
@@ -56,7 +56,7 @@
 	</form:form >
 	</div>		
 <!-- =========================================================================================================================================================== -->		
-	<main class="background-blue h-100">
+	<main class="background-blue">
 	<!-- SORT BUTTONS -->	
 		<div class = "d-flex justify-content-evenly p-3">
 			<form action="#">

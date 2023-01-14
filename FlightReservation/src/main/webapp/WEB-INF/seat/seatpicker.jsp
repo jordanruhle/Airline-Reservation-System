@@ -7,9 +7,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- for CSS -->
-<link rel="stylesheet" type="text/css" href="/css/index.css">
-
 <!-- for Bootstrap CSS -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -18,14 +15,16 @@
 	crossorigin="anonymous">
 <!-- for CSS -->
 <link rel="stylesheet" type="text/css" href="/css/seats.css">
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body class="background-blue">
 	<header class="d-flex bd-highlight p-3 header bg-secondary">
 		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
 	</header>
-	<main class="background-blue">
+	<main class="background-blue pt-5">
         <div class="nose">
             <div class="window">
                 <div class="windowBottom"></div>
