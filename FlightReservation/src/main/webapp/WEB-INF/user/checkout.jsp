@@ -32,7 +32,7 @@
 <!-- =========================================================================================================================================================== -->		
 <!-- CHECKOUT FORM  -->
 
-	<div class="mainContent d-flex align-items-center justify-content-center">
+	<div class="mainContent d-flex align-items-center justify-content-center py-5">
 		<div class="regForm bg-light p-3">
 
 					   <form action="/charge" method="POST" id="checkout-form">

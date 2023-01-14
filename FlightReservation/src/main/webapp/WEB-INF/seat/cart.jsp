@@ -102,10 +102,10 @@
        	
 	<!-- ----------- ORDER SUMMARY ----------- -->
 	
-		<div class="col-2">
+		<div class="col-2 minWidth">
 		
 	<!-- ----------- ORDER SUMMARY HEADER ----------- -->
-			<h2 class="card-header py-4 px-5 bg-dark bg-gradient text-light text-uppercase text-center ">Order Summary</h2>
+			<h2 class="card-header py-4 px-5 bg-dark bg-gradient text-light text-uppercase text-center minWidth">Order Summary</h2>
 	<!-- ----------- ORDER SUMMARY HEADER ----------- -->
 
 	<!-- ----------- ORDER SUMMARY BODY ----------- -->

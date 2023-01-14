@@ -39,7 +39,7 @@
 		
 	<!-- ----------- LOGIN FORM ----------- -->
 			<form:form action="/login" class="" method="POST" modelAttribute="newLogin">
-			<h2 class="text-white mb-4 text-uppercase">Login!</h2>
+			<h2 class="text-white mb-4 text-uppercase">Login</h2>
 				<div class="row mb-5">
 					<div class="col-md-6">
 						<div class="form-outline">
