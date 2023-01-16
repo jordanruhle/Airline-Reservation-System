@@ -95,7 +95,7 @@
 				<!-- ----------- CITY STATE ZIP ----------- -->
 				<div class="row">
 				<!-- ----------- CITY ----------- -->
-					<div class="col-md-6 mb-4">
+					<div class="col-md-4 mb-4">
 						<div class="form-outline">
 							<label class="form-label">City</label>
 							<form:input path="city" class="form-control form-control-lg" />
@@ -105,7 +105,7 @@
 				<!-- ----------- CITY ----------- -->
 				
 				<!-- ----------- STATE ----------- -->
-					<div class="col-md-6 mb-4">
+					<div class="col-md-4 mb-4">
 						<label class="form-label">State</label>
 						<form:select class="select form-control form-control-lg" path="state">
 							<form:option value="AL"/>
@@ -163,6 +163,16 @@
 					</div>
 				<!-- ----------- STATE ----------- -->
 				
+				<!-- ----------- ZIP ----------- -->
+				<div class="col-md-4 mb-4">
+						<div class="form-outline">
+							<label class="form-label">Zip Code</label>
+							<form:input path="zip" class="form-control form-control-lg" />
+							<form:errors path="zip" />
+						</div>
+					</div>
+				<!-- ----------- ZIP ----------- -->
+								
 				</div>
 				<!-- ----------- CITY STATE ZIP ----------- -->
 		

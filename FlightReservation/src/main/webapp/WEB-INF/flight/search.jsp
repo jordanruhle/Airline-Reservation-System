@@ -77,7 +77,7 @@
 	<!-- TABLE -->
 		
 		<div class="container text-center ">
-			<table class="table table-dark table-striped">
+			<table class="table table-light table-striped">
 	            <thead>
 	                <tr>
 	                    <th class="text-uppercase">Date</th>
