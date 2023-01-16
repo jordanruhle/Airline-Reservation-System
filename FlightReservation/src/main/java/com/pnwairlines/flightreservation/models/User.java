@@ -50,8 +50,12 @@ public class User {
     
     @NotEmpty
     private String state;
+
+    @NotNull
+    private Integer zip;
     
-    @NotEmpty
+
+	@NotEmpty
 	private String password;
   
     @NotEmpty
@@ -77,7 +81,7 @@ public class User {
 
    public User(@NotEmpty String firstName, @NotEmpty String lastName,
 			@Past(message = "Date of birth must be before today") Date dob, @NotEmpty @Email String email,
-			@NotEmpty String address, @NotEmpty String city, @NotEmpty String state, @NotEmpty String password,
+			@NotEmpty String address, @NotEmpty String city, @NotEmpty String state, @NotNull Integer zip, @NotEmpty String password,
 			@NotEmpty String confirm, List<Seat> seat) {
 		super();
 		this.firstName = firstName;
@@ -87,6 +91,7 @@ public class User {
 		this.address = address;
 		this.city = city;
 		this.state = state;
+		this.zip = zip;
 		this.password = password;
 		this.confirm = confirm;
 		this.seat = seat;
@@ -165,8 +170,16 @@ public class User {
 		return state;
 	}
 
-	public void setState(String state) {
+	public void setState(String state) {s
 		this.state = state;
+	}
+
+	public Integer getZip() {
+		return zip;
+	}
+	
+	public void setZip(Integer zip) {
+		this.zip = zip;
 	}
 
 	public String getPassword() {

@@ -16,7 +16,7 @@
 
 <title>Flight Search</title>
 </head>
-<body>
+<body class="background-blue ">
 		<header class="d-flex bd-highlight p-3 header bg-secondary">
 		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
 	</header>
@@ -25,7 +25,7 @@
 	<form:form action="/flights" method="POST" class="d-flex justify-content-center gap-5 align-items-start mx-auto w-75" >
 	<div class="col-6">
 		<h2 class="text-white mx-auto mb-3" >Plan your next adventure.</h2>
-		<div class="d-flex justify-content-center align-items-center mx-auto search gap-2">
+		<div class="d-flex justify-content-center align-items-center mx-auto gap-2">
 			<select name="departure" class="form-control ">
 				<option value="SEA">SEA</option>
 				<option value="PDX">PDX</option>
@@ -77,7 +77,7 @@
 	<!-- TABLE -->
 		
 		<div class="container text-center ">
-			<table class="table table-dark table-striped">
+			<table class="table table-light table-striped">
 	            <thead>
 	                <tr>
 	                    <th class="text-uppercase">Date</th>
