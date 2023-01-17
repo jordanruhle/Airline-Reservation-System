@@ -17,6 +17,8 @@
 <link rel="stylesheet" type="text/css" href="/css/seats.css">
 <link rel="stylesheet" type="text/css" href="/css/index.css">
 
+
+
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -32,17 +34,30 @@
         </div>
         <div class="body-container">
 	        <div class="left-wing"></div>
-	        <div class="plane">
+	        <div class="plane" id="plane">
 		        <c:forEach var="seat" items="${allSeats}">
 		        	<c:choose>
 
 		        		<c:when test = "${seat.user.id == null}">
-		        			<div class=" square"><form action="/seats/${seat.id}"><button  class="seat"><img class="seatIcon" src="${pageContext.request.contextPath}/seatLogo.png"></button></form></div>
+		        			<div class="square">
+		        				<div class="popup d-flex align-items-center gap-3" id="${seat.id}">
+		        				<div class="pointer"></div>
+		        					<h5 class="m-0">Seat</h5>
+		        					<h4 class="m-0"><c:out value="${seat.aisle}"/><c:out value="${seat.row}"/></h4>
+		        					<div class="popupDivider"></div>
+		        					<h5 class="m-0">$<c:out value="${seat.price}"/></h5>
+		        					<button onClick="addSeatToCart()" value="${seat.id}" class="btn btn-danger minWidth">Reserve Seat</button>
+		        				</div>
+		        			<button class="seat" value="${seat.id}"><img class="seatIcon" src="${pageContext.request.contextPath}/seatLogo.png"></button></div>
 		        		</c:when>
 		        		
 
 		        		<c:otherwise>
-		        			<div class=" square"><form action=""><button  class="seat">X</button></form></div>
+		        			<div class="square">
+		        				<div class="popup" id="${seat.id}">
+		        					<p>Seat TAKEN:)</p>
+		        				</div>
+		        			<form action=""><button  class="seat">X</button></form></div>
 		        		</c:otherwise>
 		        		
 		        	</c:choose>
@@ -51,7 +66,7 @@
 		        		<c:set var = "C" scope = "session" value ="C"></c:set>
 		        		
 		        		<c:if test="${C.equals(aisle)}">        	
-		        			<div class=" square"><div class="aisle"><c:out value="${seat.row}"></c:out></div></div>
+		        			<div class="square"><div class="aisle"><c:out value="${seat.row}"></c:out></div></div>
 		        		</c:if>
 		        	
 	        </c:forEach>
@@ -66,5 +81,6 @@
         <div class="rear-right-wing"></div>
         </div>
     </main>
+    <script src="${pageContent.request.contextPath}/js/seatPicker.js"></script>
 </body>
 </html>
