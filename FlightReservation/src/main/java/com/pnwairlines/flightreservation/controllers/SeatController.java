@@ -1,5 +1,7 @@
 package com.pnwairlines.flightreservation.controllers;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,16 +30,18 @@ public class SeatController {
 	// ----------- VIEW ALL SEATS BY FLIGHT ---------------//
 			@GetMapping("/seats/{id}/picker")
 			public String index(
-					@PathVariable("id") Long id,
-				HttpSession session, Model model
+				@PathVariable("id") Long id,
+				HttpSession session,
+				Model model
 			) {
-				
+				ArrayList<Integer> cartList = new ArrayList<>();
+				session.setAttribute("cartList", cartList);
 				model.addAttribute("allSeats", seatServ.getSeatsByFlightId(id));
 				return "/seat/seatpicker.jsp";
 			}
 	// ----------- VIEW ALL SEATS BY FLIGHT ---------------//
 	
-	// ------------------- CART --------------------//s
+	// ------------------- CART --------------------//
 			
 			@GetMapping("/seats/{id}")
 			public String cart(
