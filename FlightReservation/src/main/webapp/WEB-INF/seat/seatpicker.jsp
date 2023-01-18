@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page isErrorPage="true" %> 
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="javax.servlet.http.*" %>
 
 <!DOCTYPE html>
 <html>
@@ -46,9 +48,17 @@
 		        					<h4 class="m-0"><c:out value="${seat.aisle}"/><c:out value="${seat.row}"/></h4>
 		        					<div class="popupDivider"></div>
 		        					<h5 class="m-0">$<c:out value="${seat.price}"/></h5>
-		        					<button onClick="addSeatToCart()" value="${seat.id}" class="btn btn-danger minWidth">Reserve Seat</button>
+		        					<button 
+		        						onClick="" 
+		        						value="${seat.id}" 
+		        						class="btn btn-danger minWidth">
+		        							Reserve Seat
+		        					</button>
 		        				</div>
-		        			<button class="seat" value="${seat.id}"><img class="seatIcon" src="${pageContext.request.contextPath}/seatLogo.png"></button></div>
+		        				<button class="seat" value="${seat.id}">
+		        					
+		        				</button>
+		        			</div>
 		        		</c:when>
 		        		
 
@@ -57,7 +67,7 @@
 		        				<div class="popup" id="${seat.id}">
 		        					<p>Seat TAKEN:)</p>
 		        				</div>
-		        			<form action=""><button  class="seat">X</button></form></div>
+		        			<form action=""><button  class="reservedSeat">X</button></form></div>
 		        		</c:otherwise>
 		        		
 		        	</c:choose>

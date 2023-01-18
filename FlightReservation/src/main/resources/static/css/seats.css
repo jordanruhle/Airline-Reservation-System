@@ -25,15 +25,6 @@ form {
     height: 50px;
 }
 
-.seat {
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-    height: 100%;
-    width: 100%;
-    background-color: #1d2336;
-
-}
 .aisle {
 	text-align: center;
 	margin: auto;
@@ -179,8 +170,47 @@ button {
 }
 
 .seatIcon {
-	width: 70%;
-	height: 70%;
+	border-radius: 5px;
+    color: white;
+    height: 100%;
+    width: 100%;
+    background-color: #1d2336;
+    padding: 8px;
+}
+
+.seatWrapper {
+	border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.seatIcon:hover {
+	cursor: pointer;
+	color:  #1d2336;
+	background-color: #CB310B;
+}
+
+.reservedSeat {
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-color: #1d2336;
+    color: white;
+    padding: 0px;
+}
+
+.seat {
+    border-radius: 5px;
+    border: 10px solid #1d2336;
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    background-color: #1d2336;
+	background-image: url("/seatLogo.png");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 body{

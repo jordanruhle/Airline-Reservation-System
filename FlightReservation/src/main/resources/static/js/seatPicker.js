@@ -8,9 +8,3 @@ document.getElementById("plane").addEventListener("click", function(e){
 	
 }); 
 
-function addSeatToCart(){
-	let cartSeats = session.getAttribute(cartSeats)
-	cartSeats.push(e.target.value)
-	session.addAttribute("cartSeats", cartSeats)
-	console.log(session.cartSeats)
-};
