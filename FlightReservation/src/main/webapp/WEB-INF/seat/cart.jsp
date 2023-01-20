@@ -3,6 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isErrorPage="true"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,7 +80,7 @@
 					<div class ="flex-grow-1 minWidth">
 						<div class="d-flex justify-content-between gap-3 mb-4">
 							<h5 class="text-dark">Flight Price: </h5>
-							<h5 class="text-dark text-end">$<c:out value="${ seat.price }"></c:out></h5>
+							<h5 class="text-dark text-end">$<fmt:formatNumber type="number" maxFractionDigits="2" value="${seat.price / 100}"/></h5>
 						</div>
 						<div class="d-flex justify-content-between gap-3 my-4">
 							<h5 class="text-dark">Seat: </h5>
@@ -112,16 +113,16 @@
 			<div class="card-body px-5 bg-light rounded-bottom">
 				<div class="d-flex justify-content-between my-4">
 					<h5 class="text-dark">Sub Total:</h5>
-					<h5 class="text-dark">$<c:out value="${ seat.price }"></c:out></h5>
+					<h5 class="text-dark">$<fmt:formatNumber type="number" maxFractionDigits="2" value="${ seat.price / 100}"/></h5>
 				</div>
 					
 				<div class="d-flex justify-content-between my-4">
 					<h5 class="text-dark">Taxes:</h5>
-					<h5 class="text-dark">$<c:out value="${ seat.price *.10}"></c:out></h5>
+					<h5 class="text-dark">$<fmt:formatNumber type="number" maxFractionDigits="2" value="${ seat.price *.10 / 100}"/></h5>
 				</div>
 				<div class="d-flex justify-content-between my-4">
 					<h5 class="text-dark">Total Charges:</h5>
-					<h5 class="text-dark">$<c:out value="${ seat.price *1.10}"></c:out></h5>
+					<h5 class="text-dark">$<fmt:formatNumber type="number" maxFractionDigits="2" value="${ seat.price *1.10 / 100}"/></h5>
 				</div>
 				
 				<form class="my-4" action="/login">

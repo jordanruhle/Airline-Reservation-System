@@ -50,10 +50,7 @@ public class SeatController {
 				Model model
 			) {	
 				Seat thisSeat = seatServ.getOne(id);
-				
-				int total = (int) Math.ceil(thisSeat.getPrice() * 1.10);
-				session.setAttribute("seat_id", id);
-				session.setAttribute("total", total);
+
 				model.addAttribute("seat", seatServ.getOne(id));
 				return "seat/cart.jsp";
 			}

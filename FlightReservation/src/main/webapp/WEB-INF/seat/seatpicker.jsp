@@ -43,21 +43,21 @@
 		        		<c:when test = "${seat.user.id == null}">
 		        			<div class="square">
 		        				<div class="popup d-flex align-items-center gap-3" id="${seat.id}">
-		        				<div class="pointer"></div>
+		        					<div class="pointer"></div>
 		        					<h5 class="m-0">Seat</h5>
 		        					<h4 class="m-0"><c:out value="${seat.aisle}"/><c:out value="${seat.row}"/></h4>
 		        					<div class="popupDivider"></div>
-		        					<h5 class="m-0">$<c:out value="${seat.price}"/></h5>
+		        					<h5 class="m-0">$<c:out value="${seat.price/100}"/></h5>
+		        					<form action="/seats/${seat.id}">
 		        					<button 
 		        						onClick="" 
 		        						value="${seat.id}" 
 		        						class="btn btn-danger minWidth">
 		        							Reserve Seat
 		        					</button>
+		        					</form>
 		        				</div>
-		        				<button class="seat" value="${seat.id}">
-		        					
-		        				</button>
+		        					<button class="seat" value="${seat.id}"></button>
 		        			</div>
 		        		</c:when>
 		        		
