@@ -46,7 +46,7 @@ public class Seat {
 // ------------ MEMBER VARIABLES -----------------
     
 //-------------- RELATIONSHIP --------------------
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="flight_id")
     private Flight flight;
     

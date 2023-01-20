@@ -87,6 +87,12 @@
     	<artifactId>stripe-java</artifactId>
     	<version>4.2.0</version>
 	</dependency>
+	
+    <!-- HIBERNATE DEPENDENCY-->
+	<dependency>
+    	<groupId>org.hibernate</groupId>
+   		<artifactId>hibernate-core</artifactId>
+    </dependency>
 
 	
 	</dependencies>
