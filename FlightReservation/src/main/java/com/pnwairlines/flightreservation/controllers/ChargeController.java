@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.pnwairlines.flightreservation.models.ChargeRequest;
+import com.pnwairlines.flightreservation.models.Seat;
 import com.pnwairlines.flightreservation.repositories.SeatRepository;
 import com.pnwairlines.flightreservation.services.SeatService;
 import com.pnwairlines.flightreservation.services.StripeService;
@@ -24,7 +25,6 @@ public class ChargeController {
     
     @Autowired
     private SeatService seatService;
-    
 
     @PostMapping("/charge")
     public String charge(ChargeRequest chargeRequest, Model model, HttpSession session)
@@ -36,7 +36,8 @@ public class ChargeController {
         model.addAttribute("status", charge.getStatus());
         model.addAttribute("chargeId", charge.getId());
         model.addAttribute("balance_transaction", charge.getBalanceTransaction());
-        Long seat_id = (Long)  session.getAttribute("seat_id");
+        Seat thisSeat = (Seat) session.getAttribute("seat");
+        Long seat_id = thisSeat.getId();
         Long user_id = (Long)  session.getAttribute("user_id");
         seatService.reserveSeat(user_id, seat_id );
         return "/user/result.jsp";

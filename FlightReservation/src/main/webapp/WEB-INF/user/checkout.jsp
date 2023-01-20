@@ -22,15 +22,13 @@
 <title>Checkout</title>
 </head>
 <body class="background-blue">
-<!-- =========================================================================================================================================================== -->		
-	<!-- ----------- HEADER ----------- -->
+<!-- ----------- HEADER ----------- -->
 	<header class="d-flex bd-highlight p-3 header bg-secondary">
 		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
 	</header>
-	<!-- ----------- HEADER ----------- -->
-<!-- =========================================================================================================================================================== -->		
-<!-- =========================================================================================================================================================== -->		
-<!-- CHECKOUT FORM  -->
+<!-- ----------- HEADER ----------- -->
+		
+<!----------- CHECKOUT FORM ------------  -->
 
 	<div class="mainContent d-flex align-items-center justify-content-center py-5">
 		<div class="regForm bg-light p-3">
@@ -42,7 +40,6 @@
 						    <script
 						       src="https://checkout.stripe.com/checkout.js" 
 						       class="stripe-button"
-						
 						       data-key="${stripePublicKey}"
 						       data-amount="${amount}" 
 						       data-currency="${currency}"
@@ -55,17 +52,8 @@
 						</form>
 		</div>
 	</div>
-<!-- CHECKOUT FORM  -->
-<!-- =========================================================================================================================================================== -->		
-<br/>
-<!-- =========================================================================================================================================================== -->		
-<!-- LOGIN FORM -->
-	
-<!-- LOGIN FORM -->	
-<!-- =========================================================================================================================================================== -->		
+<!----------- CHECKOUT FORM ------------  -->
 
-
-	<br/>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

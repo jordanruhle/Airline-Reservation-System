@@ -35,7 +35,7 @@ public class Seat {
     private int row;
     
     @Min(0)
-    private Double price;
+    private int price;
     
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -46,7 +46,7 @@ public class Seat {
 // ------------ MEMBER VARIABLES -----------------
     
 //-------------- RELATIONSHIP --------------------
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="flight_id")
     private Flight flight;
     
@@ -59,7 +59,7 @@ public class Seat {
 //-------------- CONSTRUCTORS --------------------
     public Seat() {}
     
-    public Seat(@NotEmpty String aisle, @Min(0) int row, @Min(0) Double price, Flight flight, User user) {
+    public Seat(@NotEmpty String aisle, @Min(0) int row, @Min(0) int price, Flight flight, User user) {
 		super();
 		this.aisle = aisle;
 		this.row = row;
@@ -98,10 +98,10 @@ public class Seat {
 	public void setRow(int row) {
 		this.row = row;
 	}
-	public Double getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(Double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	public Date getCreatedAt() {

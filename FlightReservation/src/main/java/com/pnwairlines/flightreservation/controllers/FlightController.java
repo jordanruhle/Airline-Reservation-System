@@ -91,7 +91,7 @@ public class FlightController {
 			else {
 				aisle = "F";
 			}
-			Seat seatObj = new Seat(aisle, row, 188.95, newFlight, null);
+			Seat seatObj = new Seat(aisle, row, 18895, newFlight, null);
 			seatService.create(seatObj);
 		}
 		return "redirect:/admins/dashboard";

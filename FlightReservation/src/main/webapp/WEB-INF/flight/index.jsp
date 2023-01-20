@@ -15,8 +15,16 @@
 <title>PNW Airlines</title>
 </head>
 <body>
-	<header class="d-flex bd-highlight p-3 header bg-secondary">
+	<header class="d-flex justify-content-between bd-highlight p-3 px-5 header bg-secondary">
 		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
+		<div class="d-flex justify-content-center align-items-center gap-4">
+			<h3 class="text-white">Welcome</h3>
+			<c:if test="${user_id != null}">
+				<form action="/logout">
+					<button class="btn btn-primary">Logout</button>
+				</form>
+			</c:if>
+		</div>
 	</header>
 	<!--DROP DOWN SEARCH-->
 	<div class="stripe p-3">
