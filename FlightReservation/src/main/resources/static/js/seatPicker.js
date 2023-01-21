@@ -16,3 +16,7 @@ document.getElementById("plane").addEventListener("click", function(e){
 	
 }); 
 
+function removePopup(element){
+	element.classList.remove("show"); 
+}
+

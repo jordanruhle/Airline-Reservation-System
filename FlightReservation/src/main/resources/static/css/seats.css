@@ -181,10 +181,11 @@ button {
     z-index: 1;
 }
 
-.seatIcon:hover {
+.seat:hover {
 	cursor: pointer;
 	color:  #1d2336;
 	background-color: #CB310B;
+	border: 10px solid #CB310B;
 }
 
 .reservedSeat {
