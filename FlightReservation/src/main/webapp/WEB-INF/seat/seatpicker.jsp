@@ -50,7 +50,7 @@
 
 		        		<c:when test = "${seat.user.id == null}">
 		        			<div class="square">
-		        				<div class="popup d-flex align-items-center gap-3" id="${seat.id}">
+		        				<div class="popup d-flex align-items-center gap-3" id="${seat.id}" onmouseleave="removePopup(this)">
 		        					<div class="pointer"></div>
 		        					<h5 class="m-0">Seat</h5>
 		        					<h4 class="m-0"><c:out value="${seat.aisle}"/><c:out value="${seat.row}"/></h4>
@@ -65,7 +65,7 @@
 		        					</button>
 		        					</form>
 		        				</div>
-		        					<button class="seat" value="${seat.id}"></button>
+		        					<button class="btn seat" value="${seat.id}"></button>
 		        			</div>
 		        		</c:when>
 		        		
