@@ -14,11 +14,6 @@ main {
     align-items: center;
 }
 
-form {
-
-}
-
-
 .square {
     display: text-align-center;
     position: relative;
@@ -44,8 +39,9 @@ form {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-background-color: #FEEAD2;
+	background-color: #FEEAD2;
 }
+
 .tail {
 	position: relative;
     border-left:  3px solid black;
@@ -58,7 +54,7 @@ background-color: #FEEAD2;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-background-color: #FEEAD2;
+	background-color: #FEEAD2;
     z-index: 2;
 }
 
@@ -93,10 +89,9 @@ background-color: #FEEAD2;
 .right-wing {
     width: 800px;
     height: 1200px;
-    	background-color: #0E3A6B;
+    background-color: #0E3A6B;
     clip-path: polygon(95% 86%, 100% 100%, 23% 87%, 0 87%, 0% 38%);
     border: 1px solid black;
-    
 }
 
 .vertical-stabilizer {
@@ -117,7 +112,7 @@ background-color: #FEEAD2;
 	left: 200px;
     width: 600px;
     height: 600px;
-    	background-color: #0E3A6B;
+    background-color: #0E3A6B;
     clip-path: polygon( 100% 38%, 100% 87%, 77% 87%, 0% 100%, 5% 86%);
     border: 1px solid black;
     
@@ -159,7 +154,7 @@ background-color: #FEEAD2;
     border-radius: 100% 100% 0 0;
     border-bottom: 50% solid black;
     z-index: 2;
-background-color: #FEEAD2;
+	background-color: #FEEAD2;
 }
 
 
@@ -229,8 +224,7 @@ body{
   padding: 10px;
   position: absolute;
   z-index: 3;
-  bottom: 50px;
-  
+  bottom: 52px;
 }
 
 .show {
@@ -252,7 +246,7 @@ body{
 	width: 0px;
 }
 
-.pointer{
+.point {
 	position: absolute;
 	width: 0px;
 	height: 0px;
@@ -261,7 +255,20 @@ body{
 	border-top: 10px solid white;
 	z-index: 1;
 	top: 50px;
-	
+}
+
+.pointer {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	border: 0px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	background-color: white;
+	transform: rotate(-45deg) skew(20deg, 20deg);
+	z-index: 1;
+	top: 41px;
+	left: 15px;
 }
 
 

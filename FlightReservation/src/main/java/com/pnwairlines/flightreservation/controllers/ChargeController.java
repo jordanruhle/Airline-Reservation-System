@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.pnwairlines.flightreservation.models.ChargeRequest;
 import com.pnwairlines.flightreservation.models.Seat;
-import com.pnwairlines.flightreservation.repositories.SeatRepository;
 import com.pnwairlines.flightreservation.services.SeatService;
 import com.pnwairlines.flightreservation.services.StripeService;
 import com.stripe.exception.StripeException;
