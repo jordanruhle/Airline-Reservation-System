@@ -21,7 +21,7 @@
 <title>Insert title here</title>
 </head>
 <body class="background-blue min-vh-100">
-	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary">
+	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary  bg-gradient">
 	  <div class="container ">
 		  <div class="row">
 			  <div class="col-8 d-flex justify-content-start d-md-block">

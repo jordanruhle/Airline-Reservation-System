@@ -20,8 +20,14 @@
 </head>
 <body class="background-blue">
 	<!-- ----------- HEADER ----------- -->
-	<header class="d-flex bd-highlight p-3 header bg-secondary">
-		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
+	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary bg-gradient">
+	  <div class="container ">
+		  <div class="row">
+			  <div class="col-8 d-flex justify-content-start d-md-block">
+				<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
+			  </div>
+		  </div>
+	  </div>
 	</header>
 	<!-- ----------- HEADER ----------- -->
 
