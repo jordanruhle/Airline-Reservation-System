@@ -27,8 +27,14 @@
 
 
 	<!-- ----------- HEADER ----------- -->
-	<header class="d-flex bd-highlight p-3 header bg-secondary">
-		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
+	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary">
+	  <div class="container ">
+		  <div class="row">
+			  <div class="col-8 d-flex justify-content-start d-md-block">
+				<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
+			  </div>
+		  </div>
+	  </div>
 	</header>
 	<!-- ----------- HEADER ----------- -->
 	
@@ -48,6 +54,7 @@
 	<!-- ----------- FLIGHT DETAILS BODY ----------- -->
 	       	<div class="container d-flex flex-wrap card-body gap-5 py-4 px-5 rounded-bottom bg-light ">
 	
+					<!-- ----------- DEPARTURE INFO ----------- -->
 					<div class ="flex-grow-1 minWidth">
 						<div class="d-flex justify-content-between gap-3 mb-4">
 							<h5 class="text-dark">Departure City: </h5>
@@ -55,14 +62,16 @@
 						</div>
 						<div class="d-flex justify-content-between gap-3 my-4">
 							<h5 class="text-dark">Departure Time: </h5>
-							<h5 class="text-dark text-end minWidth"><fmt:formatDate type="time" pattern="hh:mm a" value="${seat.flight.departure_time}"/></h5>
+							<h5 class="text-dark text-end minWidth departure-time">${seat.flight.departure_time}</h5>
 						</div>
 						<div class="d-flex justify-content-between gap-3 mt-4">
 							<h5 class="text-dark">Departure Date: </h5>
-							<h5 class="text-dark text-end"><fmt:formatDate type="date" value="${seat.flight.departure_time}" /></h5>
+							<h5 class="text-dark text-end departure-date">${seat.flight.departure_time}</h5>
 						</div>
 					</div>
+					<!-- ----------- DEPARTURE INFO ----------- -->
 					
+					<!-- ----------- ARRIVAL INFO ----------- -->
 					<div class ="flex-grow-1 minWidth">
 						<div class="d-flex justify-content-between gap-3 mb-4">
 							<h5 class="text-dark">Arrival City: </h5>
@@ -70,13 +79,14 @@
 						</div>
 						<div class="d-flex justify-content-between gap-3 my-4">
 							<h5 class="text-dark">Arrival Time: </h5>
-							<h5 class="text-dark text-end"><fmt:formatDate type="time" pattern="hh:mm a" value="${seat.flight.arrival_time}"/></h5>
+							<h5 class="text-dark text-end arrival-time">${seat.flight.arrival_time}</h5>
 						</div>
 						<div class="d-flex justify-content-between gap-3 mt-4">
 							<h5 class="text-dark">Arrival Date: </h5>
-							<h5 class="text-dark text-end"><fmt:formatDate type="date" value="${seat.flight.arrival_time}" /></h5>
+							<h5 class="text-dark text-end departure-date">${seat.flight.arrival_time}</h5>
 						</div>
 					</div>
+					<!-- ----------- ARRIVAL INFO ----------- -->
 					
 					<div class ="flex-grow-1 minWidth">
 						<div class="d-flex justify-content-between gap-3 mb-4">
@@ -151,5 +161,31 @@
 	<!-- ----------- ORDER SUMMARY ----------- -->
 	
 	</main>
+<script>
+
+// Get all the elements with the "departure-date" class
+let departureDateElements = document.querySelectorAll('.departure-date');
+departureDateElements.forEach(element => {
+  let date = new Date(element.textContent);
+  let formattedDate = date.toLocaleDateString('en-US');
+  element.textContent = formattedDate;
+});
+
+// Get all the elements with the "departure-time" class
+let departureTimeElements = document.querySelectorAll('.departure-time');
+departureTimeElements.forEach(element => {
+  let date = new Date(element.textContent);
+  let formattedTime = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+  element.textContent = formattedTime;
+});
+
+// Get all the elements with the "arrival-time" class
+let arrivalTimeElements = document.querySelectorAll('.arrival-time');
+arrivalTimeElements.forEach(element => {
+  let date = new Date(element.textContent);
+  let formattedTime = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+  element.textContent = formattedTime;
+});
+</script>
 </body>
 </html>

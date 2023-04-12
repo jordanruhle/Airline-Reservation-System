@@ -25,16 +25,22 @@
 <title>Insert title here</title>
 </head>
 <body class="background-blue">
-	<header class="d-flex justify-content-between bd-highlight p-3 px-5 header bg-secondary">
-		<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
-		<div class="d-flex justify-content-center align-items-center gap-4">
-			<h3 class="text-white">Welcome</h3>
-			<c:if test="${user_id != null}">
-				<form action="/logout">
-					<button class="btn btn-primary">Logout</button>
-				</form>
-			</c:if>
-		</div>
+	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary">
+	  <div class="container ">
+		  <div class="row">
+			  <div class="col-8 d-flex justify-content-start d-md-block">
+				<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
+			  </div>
+				<div class="d-flex justify-content-center justify-content-md-center align-items-center gap-4  col-4">
+					<h3 class="text-white d-none d-md-block">Welcome</h3>
+					<c:if test="${user_id != null}">
+						<form action="/logout">
+							<button class="btn btn-primary">Logout</button>
+						</form>
+					</c:if>
+				</div>
+		  </div>
+	  </div>
 	</header>
 	<main class="background-blue pt-5">
         <div class="nose">
