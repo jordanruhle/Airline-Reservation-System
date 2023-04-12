@@ -10,14 +10,14 @@
 <head>
 <!-- for CSS -->
 <link rel="stylesheet" type="text/css" href="/css/index.css">
-
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="ISO-8859-1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <title>Flight Search</title>
 </head>
-<body class="background-blue ">
-	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary">
+<body class="background-blue min-vh-100">
+	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary bg-gradient">
 	  <div class="container ">
 		  <div class="row">
 			  <div class="col-8 d-flex justify-content-start d-md-block">
@@ -74,7 +74,7 @@
 		</div>
 	</div>		
 <!-- =========================================================================================================================================================== -->		
-	<main class="background-blue">
+	<main class="">
 	<!-- SORT BUTTONS -->	
 		<div class = "d-flex justify-content-evenly p-3">
 			<form action="#">

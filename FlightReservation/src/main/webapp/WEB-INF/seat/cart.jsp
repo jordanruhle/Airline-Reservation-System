@@ -10,20 +10,16 @@
 <html>
 <head>
 <!-- for Bootstrap CSS -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	
 <!-- for CSS -->
 <link rel="stylesheet" type="text/css" href="/css/cart.css">
 <link rel="stylesheet" type="text/css" href="/css/index.css">
-
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="ISO-8859-1">
 <title>Flight Details</title>
 </head>
-<body class="background-blue">
+<body class="background-blue min-vh-100">
 
 
 	<!-- ----------- HEADER ----------- -->
@@ -38,88 +34,126 @@
 	</header>
 	<!-- ----------- HEADER ----------- -->
 	
-	<main class="main d-flex flex-wrap justify-content-center py-5 background-blue h-100">
 	
-	<!-- ----------- FLIGHT DETAILS ----------- -->
-		<div class="">
+	
+	
+	
+	
+	
+	
+	<main class="container py-5 h-100">
+		<div class="row">
+		
+		
+	<!-- ----------- FLIGHT DETAILS CARD ----------- -->
+	
+		<div class="col-12 c6 col-xl-8 mb-5">
+		
 	<!-- ----------- FLIGHT DETAILS HEADER ----------- -->
-			
-			<div class="d-flex justify-content-between py-4 px-5 bg-light-gray text-dark align-items-center w-100 btm-border-divider">
-				<img class="pnwLogo-sm" src="${pageContext.request.contextPath}/PnwLogoNoText.png">
+			<div class="row justify-content-between px-2 px-md-3 py-4 bg-light text-dark align-items-center btm-border-divider  roundedTop">
+			<div class="col-4 p-0 col-lg-1">
+				<img class=" pnwLogo-sm" src="${pageContext.request.contextPath}/PnwLogoNoText.png">
+			</div>
+			<div class="col-4 col-lg-4 d-flex justify-content-center align-items-center">
 	       		<h2 class="text-uppercase">Flight Details</h2>
-	       		<a href="/seats/${seat.flight.id}/remove" class="btn btn-primary">Remove</a> 
+			</div>
+	       	<div class="col-4 p-0 col-lg-1 d-flex justify-content-end align-items-center">
+	       		<a href="/seats/${seat.flight.id}/remove" class="btn btn-primary minWidth">Remove</a>
+	       	</div>
 	       	</div>
 	<!-- ----------- FLIGHT DETAILS HEADER ----------- -->
 	       	
+	       	
+	       	
 	<!-- ----------- FLIGHT DETAILS BODY ----------- -->
-	       	<div class="container d-flex flex-wrap card-body gap-5 py-4 px-5 rounded-bottom bg-light ">
-	
+				<div class="row d-flex flex-wrap py-4 roundedBottom bg-light ">
+
 					<!-- ----------- DEPARTURE INFO ----------- -->
-					<div class ="flex-grow-1 minWidth">
+					<div class="col-12  col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="d-flex justify-content-between gap-3 mb-4">
-							<h5 class="text-dark">Departure City: </h5>
-							<h5 class="text-dark text-end "><c:out value="${ seat.flight.departure }"></c:out></h5>
+							<h5 class="text-dark">Departure City:</h5>
+							<h5 class="text-dark text-end ">
+								<c:out value="${ seat.flight.departure }"></c:out>
+							</h5>
 						</div>
 						<div class="d-flex justify-content-between gap-3 my-4">
-							<h5 class="text-dark">Departure Time: </h5>
-							<h5 class="text-dark text-end minWidth departure-time">${seat.flight.departure_time}</h5>
+							<h5 class="text-dark">Departure Time:</h5>
+							<h5 class="text-dark text-end departure-time">${seat.flight.departure_time}</h5>
 						</div>
 						<div class="d-flex justify-content-between gap-3 mt-4">
-							<h5 class="text-dark">Departure Date: </h5>
+							<h5 class="text-dark">Departure Date:</h5>
 							<h5 class="text-dark text-end departure-date">${seat.flight.departure_time}</h5>
 						</div>
 					</div>
 					<!-- ----------- DEPARTURE INFO ----------- -->
 					
+
 					<!-- ----------- ARRIVAL INFO ----------- -->
-					<div class ="flex-grow-1 minWidth">
+					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="d-flex justify-content-between gap-3 mb-4">
-							<h5 class="text-dark">Arrival City: </h5>
-							<h5 class="text-dark text-end"><c:out value="${ seat.flight.destination }"></c:out></h5>
+							<h5 class="text-dark">Arrival City:</h5>
+							<h5 class="text-dark text-end">
+								<c:out value="${ seat.flight.destination }"></c:out>
+							</h5>
 						</div>
 						<div class="d-flex justify-content-between gap-3 my-4">
-							<h5 class="text-dark">Arrival Time: </h5>
+							<h5 class="text-dark">Arrival Time:</h5>
 							<h5 class="text-dark text-end arrival-time">${seat.flight.arrival_time}</h5>
 						</div>
 						<div class="d-flex justify-content-between gap-3 mt-4">
-							<h5 class="text-dark">Arrival Date: </h5>
+							<h5 class="text-dark">Arrival Date:</h5>
 							<h5 class="text-dark text-end departure-date">${seat.flight.arrival_time}</h5>
 						</div>
 					</div>
 					<!-- ----------- ARRIVAL INFO ----------- -->
-					
-					<div class ="flex-grow-1 minWidth">
+
+
+					<!-- ----------- FLIGHT INFO ----------- -->
+					<div class="col-12 col-md-6 col-lg-4">
 						<div class="d-flex justify-content-between gap-3 mb-4">
-							<h5 class="text-dark">Flight Price: </h5>
-							<h5 class="text-dark text-end">$<fmt:formatNumber type="number" maxFractionDigits="2" value="${seat.price / 100}"/></h5>
+							<h5 class="text-dark">Flight Price:</h5>
+							<h5 class="text-dark text-end">
+								$
+								<fmt:formatNumber type="number" maxFractionDigits="2"
+									value="${seat.price / 100}" />
+							</h5>
 						</div>
 						<div class="d-flex justify-content-between gap-3 my-4">
-							<h5 class="text-dark">Seat: </h5>
-							<h5 class="text-dark text-end"><c:out value="${ seat.aisle }"></c:out><c:out value="${ seat.row }"></c:out></h5>
+							<h5 class="text-dark">Seat:</h5>
+							<h5 class="text-dark text-end">
+								<c:out value="${ seat.aisle }"></c:out>
+								<c:out value="${ seat.row }"></c:out>
+							</h5>
 						</div>
 						<div class="d-flex justify-content-between gap-3 mt-4">
-							<h5 class="text-dark">Flight Number: </h5>
-							<h5 class="text-dark text-end"><c:out value="${ seat.flight.id }"></c:out></h5>
+							<h5 class="text-dark">Flight Number:</h5>
+							<h5 class="text-dark text-end">
+								<c:out value="${ seat.flight.id }"></c:out>
+							</h5>
 						</div>
 					</div>
-					
-       		</div>
-	<!-- ----------- FLIGHT DETAILS BODY ----------- -->
+					<!-- ----------- FLIGHT INFO ----------- -->
+
+
+				</div>
+				<!-- ----------- FLIGHT DETAILS BODY ----------- -->
+				
        	</div>
-	<!-- ----------- FLIGHT DETAILS ----------- -->
+	<!-- ----------- FLIGHT DETAILS CARD ----------- -->
 
 
        	
 	<!-- ----------- ORDER SUMMARY ----------- -->
 	
-		<div class="minWidth">
+		<div class="col-12 col-md-6 col-lg-6 col-xl-4 ps-xl-5">
+		<div>
 		
 	<!-- ----------- ORDER SUMMARY HEADER ----------- -->
-			<h2 class=" py-4 px-5 bg-light-gray text-dark text-uppercase text-center minWidth my-0 btm-border-divider ">Order Summary</h2>
+			<h2 class="row  px-2 px-md-3 py-4 bg-light text-dark text-uppercase text-center my-0 btm-border-divider roundedTop ">Order Summary</h2>
 	<!-- ----------- ORDER SUMMARY HEADER ----------- -->
 
 	<!-- ----------- ORDER SUMMARY BODY ----------- -->
-			<div class="card-body px-5 bg-light rounded-bottom">
+			<div class="row card-body bg-light roundedBottom">
 				<div class="d-flex justify-content-between my-4">
 					<h5 class="text-dark">Sub Total:</h5>
 					<h5 class="text-dark">$<fmt:formatNumber type="number" maxFractionDigits="2" value="${ seat.price / 100}"/></h5>
@@ -133,9 +167,9 @@
 					<h5 class="text-dark">Total Charges:</h5>
 					<h5 class="text-dark">$<fmt:formatNumber type="number" maxFractionDigits="2" value="${ seat.price *1.10 / 100}"/></h5>
 				</div>
-				<form action="/charge" method="POST" id="checkout-form">
+				<form action="/charge" method="POST" id="checkout-form" class="mb-4">
 				    <input type="hidden" value="${amount}" name="amount" />
-				    <!-- NOTE: data-key/data-amount/data-currency will be rendered by Thymeleaf -->
+				    <div class="visually-hidden">
 				    <script
 				       src="https://checkout.stripe.com/checkout.js" 
 				       class="stripe-button"
@@ -145,8 +179,11 @@
 				       data-name="PNW Airlines"
 				       data-description="PNW Airlines Checkout"
 				       data-locale="auto"
-				       data-zip-code="false">
+				       data-zip-code="false"
+				       style="display:hidden;">
 				   </script>
+				    </div>
+				   <button class="btn btn-danger w-100">Pay with Card</button>
 				</form>
 				<!--
 				<form class="my-4" action="/checkout/${seat.id}">
@@ -155,11 +192,13 @@
 				-->
 			</div>
 	<!-- ----------- ORDER SUMMARY BODY ----------- -->
+		</div>
 	
 		</div>
 		
 	<!-- ----------- ORDER SUMMARY ----------- -->
 	
+		</div>
 	</main>
 <script>
 
@@ -185,6 +224,33 @@ arrivalTimeElements.forEach(element => {
   let date = new Date(element.textContent);
   let formattedTime = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
   element.textContent = formattedTime;
+});
+
+document.getElementById('custom-button').addEventListener('click', function(e) {
+  // Open the Stripe Checkout handler
+  var stripeHandler = StripeCheckout.configure({
+    key: '${stripePublicKey}',
+    locale: 'auto',
+    token: function(token) {
+      // You can access the token ID with `token.id`.
+      // Get the token ID to your server-side code for use.
+    }
+  });
+
+  stripeHandler.open({
+    name: 'PNW Airlines',
+    description: 'PNW Airlines Checkout',
+    currency: '${currency}',
+    amount: '${amount}',
+    zipCode: false
+  });
+
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  stripeHandler.close();
 });
 </script>
 </body>

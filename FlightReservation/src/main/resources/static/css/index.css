@@ -16,6 +16,7 @@
 .banner-text {
 	font-size: 84px;
 	color: white;
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 768px) {
@@ -39,7 +40,7 @@
 }
 
 .stripe {
-	background-color: #0E3A6B;
+	background-image: linear-gradient(270deg, #0E3A6B 0%, #1f5480 100%);
 }
 
 .red-text {
@@ -59,12 +60,12 @@
 .pnwLogo-sm {
 	width: 75px;
 	height: 75px;
-	
 	border-radius: 50%;
 }
 
 .background-blue {
-	background-color: #111224;
+	background-image: linear-gradient(270deg, #111224 0%, #23243a 100%);
+	background-repeat: no-repeat;
 }
 
 .bg-light-gray {
