@@ -25,9 +25,9 @@
 	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary bg-gradient">
 	  <div class="container ">
 		  <div class="row">
-			  <div class="col-8 d-flex justify-content-start d-md-block">
+			  <a href="/" class="col-8 d-flex justify-content-start d-md-block">
 				<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
-			  </div>
+			  </a>
 		  </div>
 	  </div>
 	</header>

@@ -24,9 +24,9 @@
 	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary  bg-gradient">
 	  <div class="container ">
 		  <div class="row">
-			  <div class="col-8 d-flex justify-content-start d-md-block">
+			  <a href="/" class="col-8 d-flex justify-content-start d-md-block">
 				<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
-			  </div>
+			  </a>
 				<div class="d-flex justify-content-end justify-content-md-end align-items-center gap-4  col-4">
 					<h3 class="text-white d-none d-md-block">Welcome</h3>
 					<c:if test="${user_id != null}">
@@ -38,6 +38,13 @@
 		  </div>
 	  </div>
 	</header>
+		<div class="stripe px-md-3 py-3">
+		<div class="container">
+			<div class="row d-flex align-items-center">
+				<p class="h3 text-white col-8 col-sm-6 col-lg-4 my-4 my-auto">Life is an <span class="red-text">Adventure</span> - start yours with <span class="red-text">PNW</span> Airlines</p>
+			</div>
+		</div>
+	</div>
 	<main class=" pt-5">
         <div class="nose">
             <div class="window">
