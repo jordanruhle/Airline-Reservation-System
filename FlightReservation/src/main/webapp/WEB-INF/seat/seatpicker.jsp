@@ -27,7 +27,7 @@
 			  <div class="col-8 d-flex justify-content-start d-md-block">
 				<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
 			  </div>
-				<div class="d-flex justify-content-center justify-content-md-center align-items-center gap-4  col-4">
+				<div class="d-flex justify-content-end justify-content-md-end align-items-center gap-4  col-4">
 					<h3 class="text-white d-none d-md-block">Welcome</h3>
 					<c:if test="${user_id != null}">
 						<form action="/logout">
