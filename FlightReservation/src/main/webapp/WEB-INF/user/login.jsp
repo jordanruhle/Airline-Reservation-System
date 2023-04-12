@@ -34,37 +34,37 @@
 	<!-- ----------- LOGIN / REGISTER ----------- -->
 	<div class="background-blue h-100 d-flex align-items-center justify-content-center py-5">
 	
-		<div class="regForm bg-dark p-5">
+		<div class="regForm bg-light p-5">
 		
 		
 	<!-- ----------- LOGIN FORM ----------- -->
 			<form:form action="/login" class="" method="POST" modelAttribute="newLogin">
-			<h2 class="text-white mb-4 text-uppercase">Login</h2>
+			<h2 class="mb-4 text-uppercase">Login to Reserve your seat</h2>
 				<div class="row mb-5">
 					<div class="col-md-6">
 						<div class="form-outline">
-							<label class="form-label text-white">Email</label>
+							<label class="form-label">Email</label>
 							<form:input path="email" class="form-control form-control-lg" />
-							<form:errors path="email" class="text-white" />
+							<form:errors path="email" class="" />
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-outline">
-							<label class="form-label text-white">Password</label>
+							<label class="form-label">Password</label>
 							<form:input path="password" class="form-control form-control-lg" />
-							<form:errors path="password" class="text-white" />
+							<form:errors path="password" class="" />
 						</div>
 					</div>
 				</div>
-				<button class=" form-label btn btn-primary btn-lg text-white w-100 mb-4">Login</button>
+				<button class=" form-label btn btn-primary btn-lg w-100 mb-4">Login</button>
 			</form:form>
 	<!-- ----------- LOGIN FORM ----------- -->
 			
 			
 				<div class="">
-					<h2 class="text-white text-uppercase mb-4">Don't have an account?</h2>
+					<h2 class="text-uppercase mt-5 mb-4">Don't have an account?</h2>
 					<form:form action="/register" method="GET" class="my-4">
-						<button class=" form-label btn btn-primary btn-lg text-white w-100">Sign up!</button>
+						<button class=" form-label btn btn-primary btn-lg w-100">Register Here</button>
 					</form:form>
 				</div>
 		</div>

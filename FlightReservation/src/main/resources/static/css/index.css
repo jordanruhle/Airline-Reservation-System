@@ -1,8 +1,10 @@
 @charset "ISO-8859-1";
 
 .banner {
-	background-image: url("../PNWBannerClouds2.PNG");
+	background-image: url("../PNWBannerClouds2.svg");
+	background-origin: border-box;
 	background-size: cover;
+	background-position: right top;
 	background-repeat: no-repeat;
 	width: 100%;
 	padding-top: 10%;
@@ -10,10 +12,21 @@
 	
 }
 
+
 .banner-text {
-	font-size: 140px;
-	padding-left: 15%;
+	font-size: 84px;
 	color: white;
+}
+
+@media (min-width: 768px) {
+	.banner-text {
+	font-size: 124px;
+}
+}
+.footer {
+	background-color:  #0E3A6B;
+	width: 100%;
+	height: 150px;
 }
 
 .border {
@@ -61,3 +74,4 @@
 .btm-border-divider {
 	border-bottom: 2px solid black;
 }
+

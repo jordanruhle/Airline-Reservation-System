@@ -99,11 +99,11 @@
 	            <tbody>
 	                <c:forEach var="flight" items="${allFlights}">
 	                    <tr >
-	                      	<td><fmt:formatDate type="date" value="${flight.departure_time}" /></td>
+	                        <td class="departure-date">${flight.departure_time}</td> 	
 	                      	<td><c:out value="${flight.departure}" /></td>
 	                      	<td><c:out value="${flight.destination}" /></td>
-	                        <td><fmt:formatDate type="time" pattern="hh:mm a" value="${flight.departure_time}" /></td> 	
-	                        <td><fmt:formatDate type="time" pattern="hh:mm a" value="${flight.arrival_time}" /></td> 	
+	                        <td class="departure-time">${flight.departure_time}</td> 	
+	                        <td class="arrival-time">${flight.arrival_time}</td> 		
 	                        <td class="">
 								<form action="/seats/${flight.id}/picker">
 	        						<button class="btn btn-primary me-2">Choose Seat</button>
@@ -119,5 +119,31 @@
 	</main>
 <!-- =========================================================================================================================================================== -->		
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+
+// Get all the elements with the "departure-date" class
+let departureDateElements = document.querySelectorAll('.departure-date');
+departureDateElements.forEach(element => {
+  let date = new Date(element.textContent);
+  let formattedDate = date.toLocaleDateString('en-US');
+  element.textContent = formattedDate;
+});
+
+// Get all the elements with the "departure-time" class
+let departureTimeElements = document.querySelectorAll('.departure-time');
+departureTimeElements.forEach(element => {
+  let date = new Date(element.textContent);
+  let formattedTime = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+  element.textContent = formattedTime;
+});
+
+// Get all the elements with the "arrival-time" class
+let arrivalTimeElements = document.querySelectorAll('.arrival-time');
+arrivalTimeElements.forEach(element => {
+  let date = new Date(element.textContent);
+  let formattedTime = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+  element.textContent = formattedTime;
+});
+</script>
 </body>
 </html>
