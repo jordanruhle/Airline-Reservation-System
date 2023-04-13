@@ -34,7 +34,7 @@
 		  </div>
 	  </div>
 	</header>
-<!--DROP DOWN SEARCH-->
+	<!--DROP DOWN SEARCH-->
 	<div class="stripe px-md-3 py-3">
 		<div class="container">
 			<div class="row">
@@ -69,61 +69,97 @@
 						</div>
 					</div>
 				</form:form >
-				<p class="h3 text-white col-12 col-md-4 mt-4 my-auto">Explore the Northwest flying with the <span class="red-text">Best</span></p>
+				<p class="h3 text-white col-12 col-md-4 mt-4 my-auto">Experience the <span class="red-text">Best</span> of the Pacific Northwest </p>
 			</div>
 		</div>
-	</div>		
+	</div>			
 <!-- =========================================================================================================================================================== -->		
-	<main class="">
+	<main class="container">
 	<!-- SORT BUTTONS -->	
-		<div class = "d-flex justify-content-evenly p-3">
-			<form action="#">
-				<button class="btn btn-secondary btn-lg">Cheapest</button>
-			</form>
-			<form action="#">
-				<button class="btn btn-secondary btn-lg">Quickest</button>
-			</form>
-			<form action="#">
-				<button class="btn btn-secondary btn-lg">Earliest</button>
-			</form>
-			<form action="#">
-				<button class="btn btn-secondary btn-lg">Latest</button>
-			</form>
-		</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-evenly py-3 d-lg-none">
+                <div class="dropdown w-100">
+                    <button class="w-100 btn btn-secondary dropdown-toggle" type="button" id="sortingDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort by
+                    </button>
+                    <ul class="dropdown-menu w-100" aria-labelledby="sortingDropdown">
+                        <li><a class="dropdown-item" href="#">Cheapest</a></li>
+                        <li><a class="dropdown-item" href="#">Quickest</a></li>
+                        <li><a class="dropdown-item" href="#">Earliest</a></li>
+                        <li><a class="dropdown-item" href="#">Latest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 d-none d-lg-flex justify-content-evenly p-3">
+                <a href="#" class="btn btn-secondary btn-lg">Cheapest</a>
+                <a href="#" class="btn btn-secondary btn-lg">Quickest</a>
+                <a href="#" class="btn btn-secondary btn-lg">Earliest</a>
+                <a href="#" class="btn btn-secondary btn-lg">Latest</a>
+            </div>
+        </div>
+    </div>
+
 	<!-- SORT BUTTONS -->
 <!-- =========================================================================================================================================================== -->		
 	<!-- TABLE -->
 		
-		<div class="container text-center ">
-			<table class="table table-light table-striped">
-	            <thead>
-	                <tr>
-	                    <th class="text-uppercase">Date</th>
-	                    <th class="text-uppercase">Departure City</th>
-	                    <th class="text-uppercase">Destination City</th>
-	                    <th class="text-uppercase">Departure Time</th>
-	                    <th class="text-uppercase">Arrival Time</th>
-	                    <th class="text-uppercase">Select</th>
-	                </tr>
-	            </thead>
-	            <tbody>
-	                <c:forEach var="flight" items="${allFlights}">
-	                    <tr >
-	                        <td class="departure-date">${flight.departure_time}</td> 	
-	                      	<td><c:out value="${flight.departure}" /></td>
-	                      	<td><c:out value="${flight.destination}" /></td>
-	                        <td class="departure-time">${flight.departure_time}</td> 	
-	                        <td class="arrival-time">${flight.arrival_time}</td> 		
-	                        <td class="">
-								<form action="/seats/${flight.id}/picker">
-	        						<button class="btn btn-primary me-2">Choose Seat</button>
-	        					</form>
-							</td> 
-	                    </tr>
-	                </c:forEach>
-	            </tbody>
-	        </table>
-		</div>	
+<div class="container">
+    <div class="row bg-light text-dark text-center d-none d-lg-flex roundedTop py-2 ">
+        <div class="col-md-2 fs-5 fw-bold text-uppercase">Date</div>
+        <div class="col-md-2 fs-5 fw-bold text-uppercase">Departure City</div>
+        <div class="col-md-2 fs-5 fw-bold text-uppercase">Destination City</div>
+        <div class="col-md-2 fs-5 fw-bold text-uppercase">Departure Time</div>
+        <div class="col-md-2 fs-5 fw-bold text-uppercase">Arrival Time</div>
+        <div class="col-md-2 fs-5 fw-bold text-uppercase">Select</div>
+    </div>
+
+    <c:forEach var="flight" items="${allFlights}" varStatus="status">
+        <div class="row bg-light text-dark align-items-center roundedTop py-2 d-lg-none">
+            <div class="col-6 fs-5 fw-bold text-uppercase">Date</div>
+            <div class="col-6 text-end fs-5 departure-date">${flight.departure_time}</div>
+        </div>
+        <div class="row bg-light text-dark align-items-center  py-2 d-lg-none">
+            <div class="col-6 fs-5 fw-bold text-uppercase">Departure City</div>
+            <div class="col-6 text-end fs-5 departure-city"><c:out value="${flight.departure}" /></div>
+        </div>
+        <div class="row bg-light text-dark align-items-center  py-2 d-lg-none">
+            <div class="col-6 fs-5 fw-bold text-uppercase">Destination City</div>
+            <div class="col-6 text-end fs-5 destination-city"><c:out value="${flight.destination}" /></div>
+        </div>
+        <div class="row bg-light text-dark align-items-center  py-2 d-lg-none">
+            <div class="col-6 fs-5 fw-bold text-uppercase">Departure Time</div>
+            <div class="col-6 text-end fs-5 departure-time">${flight.departure_time}</div>
+        </div>
+        <div class="row bg-light text-dark align-items-center  py-2 d-lg-none">
+            <div class="col-6 fs-5 fw-bold text-uppercase">Arrival Time</div>
+            <div class="col-6 text-end fs-5 arrival-time">${flight.arrival_time}</div>
+        </div>
+        <div class="row bg-light text-dark align-items-center roundedBottom mb-4 d-lg-none">
+            <div class="col-6 fs-5 fw-bold text-uppercase">Select</div>
+            <div class="col-6 text-end fs-5 pb-2">
+                <form action="/seats/${flight.id}/picker">
+                    <button class="btn btn-primary me-2">Choose Seat</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row bg-light fs-5 text-dark text-center d-none d-lg-flex py-2 <c:if test="${status.last}">roundedBottom</c:if>">
+            <div class="col-md-2 bg-light text-dark departure-date">${flight.departure_time}</div>
+            <div class="col-md-2 departure-city"><c:out value="${flight.departure}" /></div>
+            <div class="col-md-2 destination-city"><c:out value="${flight.destination}" /></div>
+            <div class="col-md-2 departure-time">${flight.departure_time}</div>
+            <div class="col-md-2 arrival-time">${flight.arrival_time}</div>
+            <div class="col-md-2 ps-md-0 ps-lg-3 ">
+                <form class="" action="/seats/${flight.id}/picker">
+                    <button class="btn btn-primary minWidth">Choose Seat</button>
+                </form>
+            </div>
+        </div>
+    </c:forEach>
+</div>
+
+	
 				
 	<!-- TABLE -->
 	</main>

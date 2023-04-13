@@ -76,3 +76,16 @@
 	border-bottom: 2px solid black;
 }
 
+.minWidth {
+	min-width: max-content;
+}
+
+.roundedTop {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.roundedBottom {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}

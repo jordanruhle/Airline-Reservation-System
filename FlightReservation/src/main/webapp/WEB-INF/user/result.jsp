@@ -42,27 +42,6 @@
 		</div>
 	</div>
 	<main class="py-5">
-		<c:choose>
-			<c:when test="${not empty error}">
-				<div class="container">
-					<div class="row">
-						<div class="col-12 col-lg-9 col-xl-8 col-xxl-7 mb-5">
-							<div class="row justify-content-between px-2 px-md-3 py-4 bg-light align-items-center btm-border-divider  roundedTop">
-								<div class="col-3 col-md-4 p-0 col-lg-1">
-									<img class=" pnwLogo-sm" src="${pageContext.request.contextPath}/PnwLogoNoText.png">
-								</div>
-								<div class="col-5 col-md-4 col-lg-4 d-flex justify-content-center align-items-center">
-									<h2 style='color: red;'><c:out value="${error}" /></h2>
-								</div>
-						       	<div class="col-4 p-0 col-lg-1 d-flex justify-content-end align-items-center">
-						       		<a href="/" class="btn btn-primary minWidth">Return Home</a>
-						       	</div>
-					       	</div>
-			       		</div>
-		       		</div>
-		       	</div>
-			</c:when>
-			<c:otherwise>
 				<div class="container">
 					<div class="row mx-auto">
 						<div class="col-12 col-lg-9 col-xl-8 col-xxl-7 mb-5 mx-auto">
@@ -99,8 +78,6 @@
 						</div>
 					</div>
 		       	</div>
-			</c:otherwise>
-		</c:choose>
 	</main>
 </body>
 </html>
