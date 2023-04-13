@@ -64,7 +64,7 @@
 					       	</div>
 					       	<div class="d-flex flex-wrap justify-content-between mb-4">
 					            <h5 class="col-12 col-sm-10 col-md-6  text-dark">Status:</h5>
-					            <h5 class="col-12 col-sm-2 col-md-6  text-dark minWidth text-capitalize "><c:out value="${error}" /></h5>
+					            <h5 class="col-12 col-sm-2 col-md-6  text-dark minWidth text-capitalize "><c:out value="${status}" /></h5>
 					       	</div>
 					       	<div class="d-flex flex-wrap justify-content-between mb-4">
 					            <h5 class="col-12 col-sm-6  text-dark">Charge id:</h5>
