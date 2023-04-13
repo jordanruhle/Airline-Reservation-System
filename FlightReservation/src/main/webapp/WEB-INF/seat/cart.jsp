@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="/css/index.css">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="ISO-8859-1">
-<title>Flight Details</title>
+<title>Shopping Cart</title>
 </head>
 <body class="background-blue min-vh-100">
 
@@ -43,16 +43,9 @@
 		</div>
 	</div>
 	<!-- ----------- SLOGAN ----------- -->
-	
-	
-	
-	
-	
-	
-	
+
 	<main class="container py-5 h-100">
 		<div class="row">
-		
 		
 	<!-- ----------- FLIGHT DETAILS CARD ----------- -->
 	
@@ -162,17 +155,17 @@
 	<!-- ----------- ORDER SUMMARY HEADER ----------- -->
 
 	<!-- ----------- ORDER SUMMARY BODY ----------- -->
-			<div class="row card-body bg-light roundedBottom">
-				<div class="d-flex justify-content-between my-4">
+			<div class="row card-body bg-light roundedBottom pt-4 pb-2">
+				<div class="d-flex justify-content-between mb-4">
 					<h5 class="text-dark">Sub Total:</h5>
 					<h5 class="text-dark">$<fmt:formatNumber type="number" maxFractionDigits="2" value="${ seat.price / 100}"/></h5>
 				</div>
 					
-				<div class="d-flex justify-content-between my-4">
+				<div class="d-flex justify-content-between mb-4">
 					<h5 class="text-dark">Taxes:</h5>
 					<h5 class="text-dark">$<fmt:formatNumber type="number" maxFractionDigits="2" value="${ seat.price *.10 / 100}"/></h5>
 				</div>
-				<div class="d-flex justify-content-between my-4">
+				<div class="d-flex justify-content-between mb-4">
 					<h5 class="text-dark">Total Charges:</h5>
 					<h5 class="text-dark">$<fmt:formatNumber type="number" maxFractionDigits="2" value="${ seat.price *1.10 / 100}"/></h5>
 				</div>

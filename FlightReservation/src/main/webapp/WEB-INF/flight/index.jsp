@@ -15,7 +15,7 @@
 <title>PNW Airlines</title>
 </head>
 <body class=" bg-secondary bg-gradient">
-	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary">
+	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary bg-gradient">
 	  <div class="container ">
 		  <div class="row">
 			  <a href="/" class="col-8 d-flex justify-content-start d-md-block">

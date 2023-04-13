@@ -18,10 +18,10 @@
 
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Seat Picker</title>
 </head>
 <body class="background-blue min-vh-100">
-	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary  bg-gradient">
+	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary bg-gradient">
 	  <div class="container ">
 		  <div class="row">
 			  <a href="/" class="col-8 d-flex justify-content-start d-md-block">
@@ -38,7 +38,7 @@
 		  </div>
 	  </div>
 	</header>
-		<div class="stripe px-md-3 py-3">
+	<div class="stripe px-md-3 py-3">
 		<div class="container">
 			<div class="row d-flex align-items-center">
 				<p class="h3 text-white col-8 col-sm-6 col-lg-4 my-4 my-auto">Life is an <span class="red-text">Adventure</span> - start yours with <span class="red-text">PNW</span> Airlines</p>
