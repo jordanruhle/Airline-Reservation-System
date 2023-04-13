@@ -7,11 +7,15 @@
     
 }
 
+
 main {
+	max-width: 100%;
+	overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding-bottom: 200px;
 }
 
 .square {
@@ -60,6 +64,7 @@ main {
 
 .body-container {
     display: flex;
+    position: relative;
 }
 
 .plane {
@@ -209,10 +214,6 @@ button {
 	background-repeat: no-repeat;
 }
 
-body{
-	background-size: cover;
-	padding-bottom: 400px;
-}
 
 .popup {
   visibility: hidden;

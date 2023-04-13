@@ -35,12 +35,10 @@ public class Flight {
     private String destination;
     
     @NotNull
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private Date departure_time;
+    private String departure_time;
     
     @NotNull
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private Date arrival_time;
+    private String arrival_time;
     
     @NotEmpty
     private String status;
@@ -71,8 +69,8 @@ public class Flight {
     
 
 
-    public Flight(@NotEmpty String departure, @NotEmpty String destination, @NotNull Date departure_time,
-		@NotNull Date arrival_time, @NotEmpty String status, @NotNull int number_of_seats,
+    public Flight(@NotEmpty String departure, @NotEmpty String destination, @NotNull String departure_time,
+			@NotNull String arrival_time, @NotEmpty String status, @NotNull int number_of_seats,
 		List<Seat> seat) {
 	super();
 	this.departure = departure;
@@ -126,19 +124,19 @@ public class Flight {
 		this.destination = destination;
 	}
 
-	public Date getDeparture_time() {
+	public String getDeparture_time() {
 		return departure_time;
 	}
 
-	public void setDeparture_time(Date departure_time) {
+	public void setDeparture_time(String departure_time) {
 		this.departure_time = departure_time;
 	}
 
-	public Date getArrival_time() {
+	public String getArrival_time() {
 		return arrival_time;
 	}
 
-	public void setArrival_time(Date arrival_time) {
+	public void setArrival_time(String arrival_time) {
 		this.arrival_time = arrival_time;
 	}
 

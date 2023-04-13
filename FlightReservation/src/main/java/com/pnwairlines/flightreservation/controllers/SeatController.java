@@ -82,6 +82,9 @@ public class SeatController {
 				}
 				Seat thisSeat = (Seat) session.getAttribute("seat");
 		    	int total = (int) (thisSeat.getPrice() * 1.10);
+		    	Object cardError = session.getAttribute("error");
+		    	session.setAttribute("error", null);
+		    	model.addAttribute("error", cardError);
 		        model.addAttribute("amount", total ); // in cents
 		        model.addAttribute("stripePublicKey", stripePublicKey);
 		        model.addAttribute("currency", "usd");
