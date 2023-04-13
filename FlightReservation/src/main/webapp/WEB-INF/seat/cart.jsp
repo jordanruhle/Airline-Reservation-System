@@ -47,9 +47,17 @@
 	<main class="container py-5 h-100">
 		<div class="row">
 		
+			<c:if test="${not empty error}">
+				<div class="col-12 mb-4">
+					<div class="row px-2 px-md-3 py-4 bg-light roundedBottom roundedTop">
+						<h2  class="mx-auto col-12 text-danger "><c:out value="${error}" /></h2>
+		       		</div>
+		       	</div>
+			</c:if>
+		
 	<!-- ----------- FLIGHT DETAILS CARD ----------- -->
 	
-		<div class="col-12 c6 col-xl-8 mb-5">
+		<div class="col-12 c6 col-xl-8 mb-4">
 		
 	<!-- ----------- FLIGHT DETAILS HEADER ----------- -->
 			<div class="row justify-content-between px-2 px-md-3 py-4 bg-light text-dark align-items-center btm-border-divider  roundedTop">

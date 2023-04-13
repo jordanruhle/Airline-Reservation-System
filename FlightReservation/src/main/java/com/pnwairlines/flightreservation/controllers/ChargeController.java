@@ -43,14 +43,17 @@ public class ChargeController {
     }
 
     @ExceptionHandler(StripeException.class)
-    public String handleError(Model model, StripeException ex) {
-        model.addAttribute("error", ex.getMessage());
-        return "/result";
+    public String handleError(Model model, HttpSession session, StripeException ex) {
+    	Object theSeat = session.getAttribute("seat");
+		session.setAttribute("seat", theSeat);
+		session.setAttribute("error", ex.getMessage());
+        System.out.println(ex.getMessage());
+        return "redirect:/cart";
     }
     
     @GetMapping("/result")
-	public String index(
-	) {
+	public String index( Model model) {
+    	System.out.println()
 		return "user/result.jsp";
 	}
 }
