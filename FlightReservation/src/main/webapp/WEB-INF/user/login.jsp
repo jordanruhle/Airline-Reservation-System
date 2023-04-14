@@ -14,7 +14,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <!-- for CSS -->
 <link rel="stylesheet" type="text/css" href="/css/registration.css">
-<title>Login</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="ISO-8859-1">
 <title>Login</title>
@@ -32,6 +31,13 @@
 	  </div>
 	</header>
 	<!-- ----------- HEADER ----------- -->
+	<div class="stripe px-md-3 py-3">
+		<div class="container">
+			<div class="row d-flex align-items-center">	
+				<h2 class="text-white"><span class="red-text">PNW</span> Airlines - Customer Login</h2>
+			</div>
+		</div>
+	</div>
 	
 	<!-- ----------- LOGIN / REGISTER ----------- -->
 	<div class="h-100 d-flex align-items-center justify-content-center py-5">

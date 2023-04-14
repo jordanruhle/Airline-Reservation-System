@@ -1,5 +1,8 @@
 package com.pnwairlines.flightreservation.models;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -28,17 +32,23 @@ public class Flight {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Min(0)
+    private int price;
+    
     @NotEmpty
     private String departure;
     
     @NotEmpty
     private String destination;
     
-    @NotNull
+    @NotEmpty
     private String departure_time;
     
-    @NotNull
+    @NotEmpty
     private String arrival_time;
+    
+    @Column(name = "duration_in_seconds")
+    private Long durationInSeconds = 0L;
     
     @NotEmpty
     private String status;
@@ -70,17 +80,18 @@ public class Flight {
 
 
     public Flight(@NotEmpty String departure, @NotEmpty String destination, @NotNull String departure_time,
-			@NotNull String arrival_time, @NotEmpty String status, @NotNull int number_of_seats,
-		List<Seat> seat) {
-	super();
-	this.departure = departure;
-	this.destination = destination;
-	this.departure_time = departure_time;
-	this.arrival_time = arrival_time;
-	this.status = status;
-	this.number_of_seats = number_of_seats;
-	this.seat = seat;
-}
+            @NotNull String arrival_time, int price, @NotEmpty String status, @NotNull int number_of_seats,
+            List<Seat> seat) {
+        super();
+        this.departure = departure;
+        this.destination = destination;
+        this.departure_time = departure_time;
+        this.arrival_time = arrival_time;
+        this.price = price;
+        this.status = status;
+        this.number_of_seats = number_of_seats;
+        this.seat = seat;
+    }
 
 
 
@@ -93,6 +104,7 @@ public class Flight {
     @PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
+        this.calculateDuration();
     }
 	
 	@PreUpdate
@@ -106,6 +118,14 @@ public class Flight {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public int getPrice() {
+	    return price;
+	}
+
+	public void setPrice(int price) {
+	    this.price = price;
 	}
 
 	public String getDeparture() {
@@ -180,8 +200,20 @@ public class Flight {
 		this.seat = seat;
 	}
 	
-	
-	
-	
+	 public long getDurationInSeconds() {
+	        return durationInSeconds;
+	    }
+
+    public void setDurationInSeconds(long durationInSeconds) {
+        this.durationInSeconds = durationInSeconds;
+    }
+    
+    public void calculateDuration() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
+        LocalDateTime departureTime = LocalDateTime.parse(this.departure_time, formatter);
+        LocalDateTime arrivalTime = LocalDateTime.parse(this.arrival_time, formatter);
+        Duration duration = Duration.between(departureTime, arrivalTime);
+        this.setDurationInSeconds(duration.getSeconds());
+    }
 // ---------------GETTERS / SETTERS / OTHER METHODS ---------------------
 }
