@@ -76,29 +76,38 @@
 <!-- =========================================================================================================================================================== -->		
 	<main class="container">
 	<!-- SORT BUTTONS -->	
-    <div class="container">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-evenly py-3 d-lg-none">
-                <div class="dropdown w-100">
-                    <button class="w-100 btn btn-secondary dropdown-toggle" type="button" id="sortingDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        Sort by
-                    </button>
-                    <ul class="dropdown-menu w-100" aria-labelledby="sortingDropdown">
-                        <li><a class="dropdown-item" href="#">Cheapest</a></li>
-                        <li><a class="dropdown-item" href="#">Quickest</a></li>
-                        <li><a class="dropdown-item" href="#">Earliest</a></li>
-                        <li><a class="dropdown-item" href="#">Latest</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 d-none d-lg-flex justify-content-evenly p-3">
-                <a href="#" class="btn btn-secondary btn-lg">Cheapest</a>
-                <a href="#" class="btn btn-secondary btn-lg">Quickest</a>
-                <a href="#" class="btn btn-secondary btn-lg">Earliest</a>
-                <a href="#" class="btn btn-secondary btn-lg">Latest</a>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-12 d-flex justify-content-evenly py-3 d-lg-none">
+	            <div class="dropdown w-100">
+	                <form action="/flights/filter" method="get">
+						<input type="hidden" name="departure" placeholder="Departure" value="${flightSearchCriteria.departure != null ? flightSearchCriteria.departure : session.departure}" readonly />
+					 	<input type="hidden" name="destination" placeholder="Destination" value="${flightSearchCriteria.destination != null ? flightSearchCriteria.destination : session.destination}" readonly />
+	                    <input class="sortingOptionInput" type="hidden" name="sortingOption" value="${flightSearchCriteria.sortingOption}" />
+	                    <button class="w-100 btn btn-secondary dropdown-toggle" type="button" id="sortingDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+	                        Sort by
+	                    </button>
+	                    <ul class="dropdown-menu w-100" aria-labelledby="sortingDropdown">
+	                        <li><button type="submit" class="dropdown-item" name="sort" onclick="submitForm('CHEAPEST')" value="CHEAPEST">Cheapest</button></li>
+	                        <li><button type="submit" class="dropdown-item" name="sort" onclick="submitForm('QUICKEST')" value="QUICKEST">Quickest</button></li>
+	                        <li><button type="submit" class="dropdown-item" name="sort" onclick="submitForm('EARLIEST')" value="EARLIEST">Earliest</button></li>
+	                        <li><button type="submit" class="dropdown-item" name="sort" onclick="submitForm('LATEST')" value="LATEST">Latest</button></li>
+	                    </ul>
+	                </form>
+	            </div>
+	        </div>
+				<form class="col-12 d-none d-lg-flex justify-content-evenly p-3" id="flightSearchForm" action="/flights/filter" method="get">
+				  <input type="hidden" name="departure" placeholder="Departure" value="${flightSearchCriteria.departure != null ? flightSearchCriteria.departure : session.departure}" readonly />
+				  <input type="hidden" name="destination" placeholder="Destination" value="${flightSearchCriteria.destination != null ? flightSearchCriteria.destination : session.destination}" readonly />
+				  <input class="sortingOptionInput" type="hidden" name="sortingOption" value="${flightSearchCriteria.sortingOption}" />
+				  <button type="button" class="btn btn-secondary btn-lg" onclick="submitForm('CHEAPEST')">Cheapest</button>
+				  <button type="button" class="btn btn-secondary btn-lg" onclick="submitForm('QUICKEST')">Quickest</button>
+				  <button type="button" class="btn btn-secondary btn-lg" onclick="submitForm('EARLIEST')">Earliest</button>
+				  <button type="button" class="btn btn-secondary btn-lg" onclick="submitForm('LATEST')">Latest</button>
+				</form>
+	    </div>
+	</div>
+
 
 	<!-- SORT BUTTONS -->
 <!-- =========================================================================================================================================================== -->		
@@ -190,6 +199,14 @@ arrivalTimeElements.forEach(element => {
   let formattedTime = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
   element.textContent = formattedTime;
 });
+
+function submitForm(sortingOption) {
+	  var inputs = document.getElementsByClassName("sortingOptionInput");
+	  for (var i = 0; i < inputs.length; i++) {
+	    inputs[i].value = sortingOption;
+	  }
+	  document.getElementById("flightSearchForm").submit();
+	}
 </script>
 </body>
 </html>

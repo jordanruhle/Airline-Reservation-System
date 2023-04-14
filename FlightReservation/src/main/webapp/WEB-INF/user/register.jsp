@@ -30,7 +30,13 @@
 	  </div>
 	</header>
 	<!-- ----------- HEADER ----------- -->
-
+	<div class="stripe px-md-3 py-3">
+		<div class="container">
+			<div class="row d-flex align-items-center">	
+				<h2 class="text-white"><span class="red-text">PNW</span> Airlines - Customer Registration</h2>
+			</div>
+		</div>
+	</div>
 	<!-- ----------- MAIN ----------- -->
 	<div class="mainContent d-flex align-items-center justify-content-center py-5">
 	

@@ -6,23 +6,67 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- for CSS -->
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+
+<!-- for Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- for CSS -->
+<link rel="stylesheet" type="text/css" href="/css/registration.css">
+<title>Login</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
-<body>
-	<form:form action="/admins/login" method="post" modelAttribute="newLogin">
-		<h2>Login</h2>
-		<p>
-			Email:
-			<form:input path="email" />
-			<form:errors path="email" />
-		</p>
-		<p>
-			Password:
-			<form:input path="password" />
-			<form:errors path="password" />
-		</p>
-		<button>Login</button>
-	</form:form>	
+<body class="background-blue min-vh-100">
+
+	<!-- ----------- HEADER ----------- -->
+	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary bg-gradient">
+	  <div class="container ">
+		  <div class="row">
+			  <a href="/" class="col-8 d-flex justify-content-start d-md-block">
+				<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
+			  </a>
+		  </div>
+	  </div>
+	</header>
+	<!-- ----------- HEADER ----------- -->
+	<div class="stripe px-md-3 py-3">
+		<div class="container">
+			<div class="row d-flex align-items-center">	
+				<h2 class="text-white"><span class="red-text">PNW</span> Airlines - Admin Login</h2>
+			</div>
+		</div>
+	</div>
+	<!-- ----------- LOGIN / REGISTER ----------- -->
+	<div class="h-100 d-flex align-items-center justify-content-center py-5">
+	
+		<div class="regForm bg-light p-5">
+		
+		
+	<!-- ----------- LOGIN FORM ----------- -->
+			<form:form action="/admins/login" class="" method="POST" modelAttribute="newLogin">
+			<h2 class="mb-4 text-uppercase">Administrator Login</h2>
+				<div class="row mb-5">
+					<div class="col-md-6">
+						<div class="form-outline">
+							<label class="form-label">Email</label>
+							<form:input path="email" class="form-control form-control-lg" />
+							<form:errors path="email" class="" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-outline">
+							<label class="form-label">Password</label>
+							<form:input type="password" path="password" class="form-control form-control-lg" />
+							<form:errors path="password" class="" />
+						</div>
+					</div>
+				</div>
+				<button class=" form-label btn btn-primary btn-lg w-100 mb-4">Login</button>
+			</form:form>
+	<!-- ----------- LOGIN FORM ----------- -->	
+			</div>
+	</div>
 </body>
 </html>

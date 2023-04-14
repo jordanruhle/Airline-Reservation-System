@@ -6,25 +6,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" /> 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
+<!-- for CSS -->
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+
+<!-- for Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- for CSS -->
+<link rel="stylesheet" type="text/css" href="/css/registration.css">
+<title>Login</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin Dashboard</title>
 </head>
-<body>	
-	<div class="d-flex justify-content-between align-items-center px-5 mb-5">
-	<h1>Admin Dashboard</h1>
-        <form action="/admins/logout">
-        	<button class="btn btn-secondary">Logout</button>
-        </form>
+<body class="background-blue min-vh-100">
+
+	<!-- ----------- HEADER ----------- -->
+	<header class="bd-highlight py-3 px-0 px-md-5 header bg-secondary bg-gradient">
+	  <div class="container ">
+		  <div class="row">
+			  <a href="/" class="col-8 d-flex justify-content-start d-md-block">
+				<img class="pnwLogo" src="${pageContext.request.contextPath}/PnwLogo.png">
+			  </a>
+		  </div>
+	  </div>
+	</header>
+	<!-- ----------- HEADER ----------- -->	
+	<div class="stripe px-md-3 py-3">
+		<div class="container">
+			<div class="row d-flex align-items-center">
+				<div class="container d-flex justify-content-between align-items-center">
+				<h1 class="text-white">Admin Dashboard</h1>
+		        <form action="/admins/logout">
+		        	<button class="btn btn-secondary">Logout</button>
+		        </form>
+			</div>
+			</div>
+		</div>
 	</div>
-        <form action="/flights/create" class=" mb-3">
+	
+	<div class="container">
+        <form action="/flights/create" class=" my-3">
         	<button class="btn btn-primary">Create a Flight</button>
         </form>
-		<table class="table table-striped">
+		<table class="table roundedTop roundedBottom bg-white table-striped">
             <thead>
                 <tr>
-                
                     <th>Flight Number</th>
                     <th>Date</th>
                     <th>Departure City</th>
@@ -41,12 +67,12 @@
                         <td><c:out value="${flight.departure}" /></td>
                         <td><c:out value="${flight.destination}" /></td>
                         <td><c:out value="${flight.status}" /></td>
-                        <td class="d-flex">
+                        <td class="d-flex justify-content-between gap 1">
 							<form action="/flights/${flight.id}/view">
-        						<button class="btn btn-primary me-2">View</button>
+        						<button class="btn btn-primary ">View</button>
         					</form>
 							<form action="/flights/${flight.id}/edit">
-        						<button class="btn btn-secondary me-2">Edit</button>
+        						<button class="btn btn-secondary">Edit</button>
         					</form>
 							<form action="/flights/${flight.id}/delete">
         						<button class="btn btn-danger">Delete</button>
@@ -56,5 +82,6 @@
                 </c:forEach>
             </tbody>
         </table>
+	</div>
 </body>
 </html>

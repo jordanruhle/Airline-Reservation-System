@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pnwairlines.flightreservation.models.Flight;
+import com.pnwairlines.flightreservation.models.FlightSearchCriteria;
+import com.pnwairlines.flightreservation.models.FlightSortingOption;
 import com.pnwairlines.flightreservation.models.Seat;
-import com.pnwairlines.flightreservation.repositories.SeatRepository;
 import com.pnwairlines.flightreservation.services.FlightService;
 import com.pnwairlines.flightreservation.services.SeatService;
 import com.pnwairlines.flightreservation.services.UserService;
@@ -59,43 +60,45 @@ public class FlightController {
 	
 	@PostMapping("/flights/create")
 	public String processFlight(
-		@Valid @ModelAttribute("flightObj") Flight filledFlight,
-		BindingResult results
+	    @Valid @ModelAttribute("flightObj") Flight filledFlight,
+	    BindingResult results
 	) {
-		// VALIDATIONS FAIL
-		System.out.println(results);
-		if(results.hasErrors()) {
-			return "/flight/create.jsp";
-		}
-		Flight newFlight = flightService.create(filledFlight);
-		int row = 0;
-		for(int i = 0; i < newFlight.getNumber_of_seats(); i++) {
-			int modulus = i % 6;
-			String aisle;
-			if(modulus == 0) {
-				aisle = "A";
-				row++;
-			}
-			else if(modulus == 1) {
-				aisle = "B";
-			}
-			else if(modulus == 2) {
-				aisle = "C";
-			}
-			else if(modulus == 3) {
-				aisle = "D";
-			}
-			else if(modulus == 4) {
-				aisle = "E";
-			}
-			else {
-				aisle = "F";
-			}
-			Seat seatObj = new Seat(aisle, row, 18895, newFlight, null);
-			seatService.create(seatObj);
-		}
-		return "redirect:/admins/dashboard";
+	    // VALIDATIONS FAIL
+	    System.out.println(results);
+	    if(results.hasErrors()) {
+	        return "/flight/create.jsp";
+	    }
+	    filledFlight.calculateDuration();
+	    Flight newFlight = flightService.create(filledFlight);
+	    int row = 0;
+	    for(int i = 0; i < newFlight.getNumber_of_seats(); i++) {
+	        int modulus = i % 6;
+	        String aisle;
+	        if(modulus == 0) {
+	            aisle = "A";
+	            row++;
+	        }
+	        else if(modulus == 1) {
+	            aisle = "B";
+	        }
+	        else if(modulus == 2) {
+	            aisle = "C";
+	        }
+	        else if(modulus == 3) {
+	            aisle = "D";
+	        }
+	        else if(modulus == 4) {
+	            aisle = "E";
+	        }
+	        else {
+	            aisle = "F";
+	        }
+	        Seat seatObj = new Seat(aisle, row, 18895, newFlight, null);
+	        seatService.create(seatObj);
+	    }
+	    return "redirect:/admins/dashboard";
 	}
+
 	
 // ---------- CREATE -----------------//
 	
@@ -129,16 +132,37 @@ public class FlightController {
 // ----------- FLIGHT SEARCH ---------------//
 	@PostMapping("/flights")
 	public String index(
-			@RequestParam("departure") String departure,
-			@RequestParam("destination") String destination,
-			HttpSession session, 
-			Model model
-			) {
-		model.addAttribute("allFlights", flightService.findArrivalDeparture(departure, destination));
-		System.out.println(flightService.findArrivalDeparture(departure, destination));
-		return "/flight/search.jsp";
+	        @RequestParam("departure") String departure,
+	        @RequestParam("destination") String destination,
+	        HttpSession session, 
+	        Model model
+	        ) {
+	    session.setAttribute("departure", departure);
+	    session.setAttribute("destination", destination);
+	    model.addAttribute("allFlights", flightService.findArrivalDeparture(departure, destination));
+	    return "/flight/search.jsp";
 	}
 // ----------- FLIGHT SEARCH ---------------//
+	
+// ----------- SORTED SEARCH ---------------//
+	@GetMapping("/flights/filter")
+	public String filterFlights(
+	        @RequestParam(name = "sortingOption", required = false) FlightSortingOption sortingOption,
+	        HttpSession session, 
+	        Model model
+	        ) {
+	    FlightSearchCriteria searchCriteria = new FlightSearchCriteria();
+	    searchCriteria.setDeparture((String) session.getAttribute("departure"));
+	    searchCriteria.setDestination((String) session.getAttribute("destination"));
+	    System.out.println("departure = " + searchCriteria.getDeparture());
+	    System.out.println("destination = " + searchCriteria.getDestination());
+	    System.out.println("sortingOption = " + searchCriteria.getSortingOption());
+	    searchCriteria.setSortingOption(sortingOption);
+	    model.addAttribute("flightSearch", searchCriteria);
+	    model.addAttribute("allFlights", flightService.findArrivalDepartureSorted(searchCriteria.getDeparture(), searchCriteria.getDestination(), searchCriteria.getSortingOption()));
+	    return "/flight/search.jsp";
+	}
+// ----------- SORTED SEARCH ---------------//
 		
 // ---------- UPDATE --------------//
 	
