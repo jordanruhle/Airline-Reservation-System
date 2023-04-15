@@ -55,12 +55,35 @@
 	        <div class="left-wing"></div>
 	        <div class="plane" id="plane">
 		        <c:forEach var="seat" items="${allSeats}">
+			        	<c:choose>
+						    <c:when test="${seat.aisle == 'A'}">
+						        <c:set var="shiftAmount" value="0" />
+						        <c:set var="pointershiftAmount" value="0" />
+						        
+						    </c:when>
+						    <c:when test="${seat.aisle == 'B'}">
+						        <c:set var="shiftAmount" value="50" />
+						        <c:set var="pointershiftAmount" value="0" />
+						    </c:when>
+						    <c:when test="${seat.aisle == 'C'}">
+						        <c:set var="shiftAmount" value="95" />
+						    </c:when>
+						    <c:when test="${seat.aisle == 'D'}">
+						        <c:set var="shiftAmount" value="185" />
+						    </c:when>
+						    <c:when test="${seat.aisle == 'E'}">
+						        <c:set var="shiftAmount" value="230" />
+						    </c:when>
+						    <c:otherwise>
+						        <c:set var="shiftAmount" value="285" />
+						    </c:otherwise>
+						</c:choose>
+		        	
 		        	<c:choose>
-
 		        		<c:when test = "${seat.user.id == null}">
 		        			<div class="square">
-		        				<div class="popup d-flex align-items-center gap-3" id="${seat.id}" onmouseleave="removePopup(this)">
-		        					<div class="pointer"></div>
+		        				<div class="popup d-flex align-items-center gap-3" id="${seat.id}" style="left: -${shiftAmount}px;" onmouseleave="removePopup(this)">
+		        					<div class="pointer" style="left: ${shiftAmount+17}px;"></div>
 		        					<h5 class="m-0">Seat</h5>
 		        					<h4 class="m-0"><c:out value="${seat.aisle}"/><c:out value="${seat.row}"/></h4>
 		        					<div class="popupDivider"></div>
