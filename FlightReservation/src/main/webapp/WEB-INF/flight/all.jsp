@@ -50,7 +50,7 @@
 		<table class="table roundedTop roundedBottom bg-white table-striped d-none d-lg-table">
             <thead>
                 <tr>
-                    <th>Flight Number</th>
+                    <th>Flight</th>
                     <th>Date</th>
                     <th>Departure City</th>
                     <th>Arrival City</th>
@@ -74,10 +74,7 @@
     						$<c:out value="${flight.price / 100}"/><fmt:formatNumber value="${flight.price % 100}" minIntegerDigits="2" maxFractionDigits="0"/> 
 						</td>
                         <td><c:out value="${flight.status}" /></td>
-                        <td class="d-flex gap-1">
-							<form action="/flights/${flight.id}/view">
-        						<button class="btn btn-primary ">View</button>
-        					</form>
+                        <td class="">
 							<form action="/flights/${flight.id}/delete">
         						<button class="btn btn-danger">Delete</button>
         					</form>
@@ -119,10 +116,7 @@
         </div>
         <div class="row bg-light text-dark align-items-center roundedBottom mb-4 d-lg-none">
             <div class="col-4 fs-5 fw-bold text-uppercase">Actions</div>
-            <div class="col-8 text-end fs-5 pb-2 d-flex justify-content-end">
-                <form action="/flights/${flight.id}/view">
-                    <button class="btn btn-primary me-2">View</button>
-                </form>
+            <div class="col-8 text-end fs-5 pb-2">
                 <form action="/flights/${flight.id}/delete">
                     <button class="btn btn-danger">Delete</button>
                 </form>
