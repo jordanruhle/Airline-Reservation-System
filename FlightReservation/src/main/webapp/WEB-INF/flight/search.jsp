@@ -5,6 +5,7 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isErrorPage="true" %>
+<%@ taglib prefix="f" uri="http://com.pnwairlines.flightreservation.util/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,19 +115,25 @@
 	<!-- TABLE -->
 		
 <div class="container">
-    <div class="row bg-light text-dark text-center d-none d-lg-flex roundedTop py-2 ">
-        <div class="col-md-2 fs-5 fw-bold text-uppercase">Date</div>
-        <div class="col-md-2 fs-5 fw-bold text-uppercase">Departure City</div>
-        <div class="col-md-2 fs-5 fw-bold text-uppercase">Destination City</div>
-        <div class="col-md-2 fs-5 fw-bold text-uppercase">Departure Time</div>
-        <div class="col-md-2 fs-5 fw-bold text-uppercase">Arrival Time</div>
-        <div class="col-md-2 fs-5 fw-bold text-uppercase">Select</div>
+    <div class="row bg-light text-dark text-center d-none d-lg-flex justify-content-between roundedTop py-2 pe-5">
+        <div class="col-md-1 fs-6 fw-bold text-uppercase">Date</div>
+        <div class="col-md-1 fs-6 fw-bold text-uppercase">Duration</div>
+        <div class="col-md-1 fs-6 fw-bold text-uppercase">Departure</div>
+        <div class="col-md-1 fs-6 fw-bold text-uppercase">Destination</div>
+        <div class="col-md-1 fs-6 fw-bold text-uppercase">Depart</div>
+        <div class="col-md-1 fs-6 fw-bold text-uppercase">Arrive</div>
+        <div class="col-md-1 fs-6 fw-bold text-uppercase">Price</div>
+        <div class="col-md-1 fs-6 fw-bold text-uppercase">Select</div>
     </div>
 
     <c:forEach var="flight" items="${allFlights}" varStatus="status">
         <div class="row bg-light text-dark align-items-center roundedTop py-2 d-lg-none">
             <div class="col-6 fs-5 fw-bold text-uppercase">Date</div>
             <div class="col-6 text-end fs-5 departure-date">${flight.departure_time}</div>
+        </div>
+        <div class="row bg-light text-dark align-items-center py-2 d-lg-none">
+            <div class="col-6 fs-5 fw-bold text-uppercase">Duration</div>
+            <div class="col-6 text-end fs-5">${f:formatDuration(flight.durationInSeconds)}</div>
         </div>
         <div class="row bg-light text-dark align-items-center  py-2 d-lg-none">
             <div class="col-6 fs-5 fw-bold text-uppercase">Departure City</div>
@@ -144,6 +151,12 @@
             <div class="col-6 fs-5 fw-bold text-uppercase">Arrival Time</div>
             <div class="col-6 text-end fs-5 arrival-time">${flight.arrival_time}</div>
         </div>
+        <div class="row bg-light text-dark align-items-center  py-2 d-lg-none">
+            <div class="col-6 fs-5 fw-bold text-uppercase">Price</div>
+            <div class="col-6 text-end fs-5">
+			    <fmt:formatNumber value="${flight.price /100 }" type="currency" currencySymbol="$" minFractionDigits="2" maxFractionDigits="2" /> 
+			</div>
+        </div>
         <div class="row bg-light text-dark align-items-center roundedBottom mb-4 d-lg-none">
             <div class="col-6 fs-5 fw-bold text-uppercase">Select</div>
             <div class="col-6 text-end fs-5 pb-2">
@@ -153,13 +166,17 @@
             </div>
         </div>
 
-        <div class="row bg-light fs-5 text-dark text-center d-none d-lg-flex py-2 <c:if test="${status.last}">roundedBottom</c:if>">
-            <div class="col-md-2 bg-light text-dark departure-date">${flight.departure_time}</div>
-            <div class="col-md-2 departure-city"><c:out value="${flight.departure}" /></div>
-            <div class="col-md-2 destination-city"><c:out value="${flight.destination}" /></div>
-            <div class="col-md-2 departure-time">${flight.departure_time}</div>
-            <div class="col-md-2 arrival-time">${flight.arrival_time}</div>
-            <div class="col-md-2 ps-md-0 ps-lg-3 ">
+        <div class="row bg-light fs-5 text-dark text-center d-none d-lg-flex justify-content-between py-2 pe-5 pe-xxl-4 <c:if test="${status.last}">roundedBottom</c:if>">
+            <div class="col-md-1 bg-light text-dark departure-date">${flight.departure_time}</div>
+            <div class="col-md-1 bg-light text-dark">${f:formatDuration(flight.durationInSeconds)}</div>
+            <div class="col-md-1 departure-city"><c:out value="${flight.departure}" /></div>
+            <div class="col-md-1 destination-city"><c:out value="${flight.destination}" /></div>
+            <div class="col-md-1 departure-time">${flight.departure_time}</div>
+            <div class="col-md-1 arrival-time">${flight.arrival_time}</div>
+            <div class="col-md-1">
+				<fmt:formatNumber value="${flight.price /100 }" type="currency" currencySymbol="$" minFractionDigits="2" maxFractionDigits="2" /> 
+			</div>
+            <div class="col-md-1 ps-md-0">
                 <form class="" action="/seats/${flight.id}/picker">
                     <button class="btn btn-primary minWidth">Choose Seat</button>
                 </form>
@@ -206,6 +223,13 @@ function submitForm(sortingOption) {
 	    inputs[i].value = sortingOption;
 	  }
 	  document.getElementById("flightSearchForm").submit();
+	}
+	
+function formatDuration(durationInSeconds) {
+	  let hours = Math.floor(durationInSeconds / 3600);
+	  let minutes = Math.floor((durationInSeconds % 3600) / 60);
+
+	  return `${hours}h ${minutes.toString().padStart(2, '0')}m`;
 	}
 </script>
 </body>

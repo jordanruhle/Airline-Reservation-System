@@ -195,11 +195,6 @@
 				    </div>
 				   <button class="btn btn-danger w-100">Pay with Card</button>
 				</form>
-				<!--
-				<form class="my-4" action="/checkout/${seat.id}">
-				<button class="align-items-center btn btn-danger w-100">Checkout</button>
-				</form>
-				-->
 			</div>
 	<!-- ----------- ORDER SUMMARY BODY ----------- -->
 		</div>
