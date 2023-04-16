@@ -69,7 +69,7 @@
                         <td><c:out value="${flight.departure}" /></td>
                         <td><c:out value="${flight.destination}" /></td>
                         <td class=" departure-time"><c:out value="${flight.departure_time}" /></td>
-                        <td class=" arrival-time"><c:out value="${flight.departure_time}" /></td>
+                        <td class=" arrival-time"><c:out value="${flight.arrival_time}" /></td>
                         <td class="price">
     						$<c:out value="${flight.price / 100}"/><fmt:formatNumber value="${flight.price % 100}" minIntegerDigits="2" maxFractionDigits="0"/> 
 						</td>

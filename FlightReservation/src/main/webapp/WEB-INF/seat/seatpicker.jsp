@@ -107,7 +107,7 @@
 		        				<div class="popup" id="${seat.id}">
 		        					<p>Seat TAKEN:)</p>
 		        				</div>
-		        			<form action=""><button  class="reservedSeat">X</button></form></div>
+		        			<form action=""><button  class="reservedSeat text-secondary">X</button></form></div>
 		        		</c:otherwise>
 		        		
 		        	</c:choose>
