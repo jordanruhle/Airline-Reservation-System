@@ -75,9 +75,10 @@
 						</td>
                         <td><c:out value="${flight.status}" /></td>
                         <td class="">
-							<form action="/flights/${flight.id}/delete">
-        						<button class="btn btn-danger">Delete</button>
-        					</form>
+						    <form action="/flights/${flight.id}" method="POST">
+						        <input type="hidden" name="_method" value="DELETE">
+						        <button class="btn btn-danger">Delete</button>
+						    </form>
 						</td> 
                     </tr>
                 </c:forEach>

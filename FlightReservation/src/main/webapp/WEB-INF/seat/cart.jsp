@@ -131,8 +131,7 @@
 						<div class="d-flex justify-content-between gap-3 my-4">
 							<h5 class="text-dark">Seat:</h5>
 							<h5 class="text-dark text-end">
-								<c:out value="${ seat.aisle }"></c:out>
-								<c:out value="${ seat.row }"></c:out>
+								<c:out value="${ seat.aisle }"></c:out><c:out value="${ seat.row }"></c:out>
 							</h5>
 						</div>
 						<div class="d-flex justify-content-between gap-3 mt-4">

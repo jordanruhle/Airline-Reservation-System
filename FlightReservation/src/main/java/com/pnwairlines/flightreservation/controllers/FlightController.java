@@ -190,15 +190,10 @@ public class FlightController {
 	
 // ---------- UPDATE --------------//
 	
+	
+	
 // ---------- DELETE --------------//
 	
-	@GetMapping("/flights/{id}/delete")
-	public String delete(
-		@PathVariable("id") Long id
-	) {
-		flightService.deleteOne(id);
-		return "redirect:/flights";
-	}
 	@DeleteMapping("/flights/{id}")
 	public String deleteFlight(
 		@PathVariable("id") Long id
